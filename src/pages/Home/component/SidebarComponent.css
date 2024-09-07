@@ -1,0 +1,43 @@
+.sidebar {
+  width: 300px;
+  padding: 10px;
+  height:100hv;
+
+}
+
+.notifications, .missed-products {
+  margin-bottom: 20px;
+  background-color: #e9ecef;
+  padding:20px;
+  border-radius:20px;
+}
+
+h5 {
+  margin-bottom: 10px;
+  margin-right:50px;
+}
+
+.notifications ul ,.missed-products ul{
+  list-style-type: none;
+  padding: 0;
+  height:300px;
+  overflow-y:scroll;
+  margin-bottom:20px;
+  
+}
+
+.notifications li ,.missed-products li{
+  padding: 5px 0;
+  border-bottom: 1px solid #dee2e6;
+  display:flex;
+  justify-content:space-evenly;
+}
+.notifications li img,.missed-products li img{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+}
+.notifications li p,.missed-products li p{
+  font-size:10px;
+}
+

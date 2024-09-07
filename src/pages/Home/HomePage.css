@@ -1,0 +1,68 @@
+.hompePage {
+  height: 100vh;
+}
+.headerComponent {
+  margin-bottom: 80px;
+}
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+.right {
+  flex: 6;
+  display: flex;
+  flex-direction: column;
+}
+
+.homepage-contentComponent {
+  display: flex;
+}
+.CharComponentClass,
+.SummarComponentClass {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.ordersComponentClass {
+  margin-top: 50px;
+}
+@media (max-width: 1200px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .right {
+    flex: none;
+  }
+
+  .left {
+    flex: none;
+  }
+
+  .homepage-contentComponent {
+    flex-direction: column;
+  }
+
+  .SummarComponentClass {
+    order: 1;
+    width: 90%;
+    margin-bottom: 10px;
+  }
+
+  .CharComponentClass {
+    order: 2;
+    width: 90%;
+  }
+
+  .ordersComponentClass {
+    order: 3;
+    width: 90%;
+  }
+
+  .SidebarComponentClass {
+    order: 4;
+    margin-top: 20px;
+    width: 90%;
+  }
+}

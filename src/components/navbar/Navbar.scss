@@ -1,0 +1,251 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f5f5f5;
+
+  .navbar-left {
+    display: flex;
+    align-items: center;
+
+    .navbar-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-right: 20px;
+    }
+    .navbar-icon-circle{
+      width: 40px; 
+      height: 40px;
+      border: 1px solid rgb(110, 186, 216);
+      padding:7px 10px;
+      border-radius: 50%;
+      font-size: 18px;
+      color:rgb(70, 67, 67);
+      margin-left: 5px;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      
+    }
+
+    .navbar-icons {
+      display: flex;
+      align-items: center;
+
+      .navbar-icon {
+        margin-right: 15px;
+        font-size: 20px;
+        color: #333;
+        cursor: pointer;
+      }
+      .dropdown-menu{
+        width:100px;
+      }
+    }
+  }
+
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    
+    .search-container {
+      border: 1px solid rgb(196, 196, 196);
+      display: flex;
+      align-items: center;
+      border-radius: 3px;
+    
+      .dropdown {
+        position: relative;
+        display: inline-block;
+        margin-right: 10px;
+        margin-left: -29px;
+        border-right: 1px solid rgb(201, 201, 201);
+        
+        .dropbtn {
+          border: none;
+          font-size: 14px;
+          padding: 5px 25px;
+          border-radius: 3px;
+          cursor: pointer;
+        
+        }
+
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          z-index: 1;
+        }
+      }
+
+      .search-input {
+        border: none;
+        outline: none;
+        padding:0 10px;
+        background-color:transparent;
+        width: 350px;
+      }
+
+      .search-btn {
+        background-color: #82CAFF ;
+        border: none;
+        cursor: pointer;
+        font-size: 15px;
+        padding: 7px 10px;
+        margin-right: 30px;
+        margin-left:-3px;
+        color:rgb(110, 110, 110);
+        
+      }
+
+      .info-icon {
+        margin-left: 10px;
+        font-size: 20px;
+        color: #00796b;
+      }
+      .dropdown-menu{
+        width:70px !important;
+      }
+
+    }
+  }
+  &.dark-mode {
+    background-color: #333;
+    color: #fff;
+    .navbar-right {
+        color:#fff;
+    }   
+    .navbar-left {
+    .navbar-icon-circle{
+       color:#fff;
+    }
+  }
+  }
+  &.light-mode {
+    background-color: #f5f5f5;
+    color: #000;
+  }
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #82CAFF;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+  .close-button {
+    font-size: 24px;
+    color: #004D40;
+    text-decoration: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  h4 {
+    margin: 0;
+    font-size: 20px;
+    color: #004D40;
+  }
+}
+
+.navbar-inviteText{
+  color:gray;
+}
+ .invite-code-box {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  
+  .navbar-code {
+    font-size: 32px;
+    font-weight: bold;
+  }
+  .CopyClass{
+    border:2px solid #515551;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    display: flex;          
+    justify-content: center; 
+    align-items: center;
+    background-color:#e5ecec;
+  }
+  
+  .navbar-copy-icon {
+    cursor: pointer;
+    color: #b1acac; 
+  }
+  .navbar-icon-discount{
+    width: 47px;
+    height: 35px;
+  }
+  
+}
+.copy-success {
+  color: #28a745;
+  margin-top: 10px;
+}
+
+.navbar-socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 5px;
+
+  .navbar-icon{
+    color:gray;
+    font-size: 5px !important;
+  }
+
+}
+.navbar-loyaltyText {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color:gray;
+}
+.navbar-points {
+  font-size: 70px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #a0b8eb;
+}
+.navbar-links {
+  margin-top: 10px; 
+  font-size: 18px;
+}
+
+.navbar-link {
+  color: #585b5e; 
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.navbar-link:hover {
+  color: #00b37d; 
+}
+
+.close-btn{
+  margin-right: auto;
+  background-color: #b9bec2;
+  border: none;
+  color:#181717;
+}
+@media (max-width: 1200px) {
+  .navbar-left {
+    display: none !important;
+  }
+  .navbar-right {
+    width: 300px;
+  } 
+}
