@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import "./ProductHead.css";
-// import Button from "react-bootstrap/Button";
-// import Modal from "react-bootstrap/Modal";
 import Accordion from "react-bootstrap/Accordion";
 import { FaExpandArrowsAlt } from "react-icons/fa";
 import { FaHome } from "react-icons/fa";

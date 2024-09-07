@@ -88,6 +88,7 @@ const ProductCard = ({ imageUrl, price }) => {
   const [showList, setShowList] = useState(false);
 
   const addNewOption = () => {
+    setShowDeleteButton(true);
     setShowList(true);
     setOptions([
       ...options,
@@ -101,7 +102,15 @@ const ProductCard = ({ imageUrl, price }) => {
   const removeOptionList = () => {
     setShowList(false);
     setOptions([]);
+
+
   };
+
+  const [showDeleteButton, setShowDeleteButton] = useState(false);
+  const removeOptionHeaderList = () => {
+    setShowDeleteButton(false);
+  };
+
 
   return (
     <div className="product-card">
@@ -329,7 +338,6 @@ const ProductCard = ({ imageUrl, price }) => {
             </label>
             <span style={{ marginRight: "10px" }}>تفعيل خيارات المنتج</span>
           </div>
-
           {isToggleOn && (
             <div>
               <div className="option-list">
@@ -351,12 +359,16 @@ const ProductCard = ({ imageUrl, price }) => {
                       <option>اللون</option>
                       <option>الصورة</option>
                     </select>
-                    <button className="delete-button-list">
-                      <MdDelete />
-                    </button>
+                    {showDeleteButton && (
+                      <button
+                        onClick={removeOptionHeaderList}
+                        className="delete-button-list"
+                      >
+                        <MdDelete />
+                      </button>
+                    )}
                   </div>
                 </div>
-
                 {options.map((option, index) => (
                   <div key={index} className="option-container">
                     <input
@@ -423,7 +435,6 @@ const ProductCard = ({ imageUrl, price }) => {
                       )}
                     </div>
                   </div>
-
                   {options.map((option, index) => (
                     <div key={index} className="option-container">
                       <input

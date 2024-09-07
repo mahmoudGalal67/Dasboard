@@ -1,5 +1,5 @@
 .product-card {
-  width: 320px;
+  width: 300px;
   height: 600px;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -101,7 +101,7 @@
 }
 
 .product-details {
-  padding: 16px;
+  padding: 7px;
   display: flex;
   flex-direction: column;
 }
@@ -248,10 +248,11 @@
 }
 .field .InputClass {
   width: 55vw;
+  margin-right:0;
 }
 .field .selectClass {
   width: 15vw;
-  padding-left: 10px;
+  padding-left:10px;
 }
 
 .field .InputClass input {
@@ -261,83 +262,85 @@
 .field .selectClass select {
   outline: none;
   padding-bottom: 12px;
-  border-right: 1px solid #aaa;
+  border-right:1px solid #aaa;
 }
 
 .field .InputNumberClass {
   width: 70vw;
 }
-.field .InputNumberClass input {
+.field .InputNumberClass input{
   outline: none;
 }
 .field .labelPriceClass {
   width: 15vw;
 }
 .field .labelPriceClass label {
-  border: none;
+  border:none;
   width: 100%;
   height: 99%;
   text-align: center;
-  border-right: 1px solid #aaa;
-  padding-left: 5px;
+  border-right:1px solid #aaa;
+  padding-left:5px;
 }
 .field .numberOfQuantity {
   width: 30vw;
-  border: none;
-  border-left: 1px solid #aaa;
+  border:none;
+  border-left:1px solid #aaa;
 }
-
+  
 .field .icon-1,
 .field .icon-2 {
   width: 15vw;
-  border: none;
-  border-left: 1px solid #aaa;
+  border:none;
+  border-left:1px solid #aaa;
 }
-.field .quantityAndChoies {
+.field .quantityAndChoies{
   width: 30vw;
-  border: none;
-  cursor: pointer;
+  border:none;
+  cursor:pointer;
 }
-.field .quantityAndChoies p,
-.field .numberOfQuantity p {
-  text-align: center;
-  margin-top: 3px;
+.field .quantityAndChoies p,.field .numberOfQuantity p{
+  text-align:center;
+  margin-top:3px;
+
 }
-.field .selectClassificationClass {
+.field .selectClassificationClass{
   width: 70vw;
-  padding-left: 10px;
+  padding-left:10px;
 }
-.field .classificationNameClass {
+.field .classificationNameClass{
   width: 15vw;
-  height: 37px;
-  border: none;
+  height:37px;
+  border:none;
 }
-.field .selectClassificationClass select {
+.field .selectClassificationClass select{
   outline: none;
+
 }
-.field .classificationNameClass p {
-  text-align: center;
-  margin-top: 3px;
-  border-right: 1px solid #aaa;
-  padding: 6px 3px;
+.field .classificationNameClass p{
+  text-align:center;
+  margin-top:3px;
+  border-right:1px solid #aaa;
+  padding:6px 3px;
 }
 
-.field .DetailsClass {
-  width: 40vw;
-  height: 37px;
-  border: none;
+.field .DetailsClass{
+  width:40vw;
+  height:37px;
+  border:none;
 }
-.field .DetailsClass p {
-  text-align: center;
-  margin-top: 3px;
+.field .DetailsClass p{
+  text-align:center;
+  margin-top:3px;
 }
-.field .selectDetailsClass {
-  width: 40vw;
-  padding-left: 10px;
+.field .selectDetailsClass{
+  width:40vw;
+  padding-left:10px;
 }
-.field .selectDetailsClass select {
-  outline: none;
-  border-right: 1px solid #aaa;
+.field .selectDetailsClass select{
+  outline:none;
+  border-right:1px solid #aaa;
+
 }
 .field label {
   display: block;
@@ -348,31 +351,32 @@
 .field select {
   width: 100%;
   padding: 8px;
-  border: none;
+  border:none;
   border-radius: 4px;
 }
 
 .save-button {
-  background-color: white;
+  background-color:white;
   color: blue;
   padding: 10px 15px;
-  border: 1px solid blue;
+  border:1px solid blue;
   border-radius: 4px;
   cursor: pointer;
 }
-.save-button:hover {
-  background-color: #ffe0b5;
+.save-button:hover{
+  background-color:#ffe0b5;
+
 }
-.photoPopup .head-section {
-  direction: rtl;
+.photoPopup .head-section{
+  direction:rtl;
 }
-.photoPopup .head-section h4 {
-  color: #746d6d;
+.photoPopup .head-section h4{
+  color:#746d6d;
 }
-.photoPopup .head-section p {
-  text-align: right;
-  font-size: 15px;
-  color: gray;
+.photoPopup .head-section p{
+  text-align:right;
+  font-size:15px;
+  color:gray;
 }
 
 .image-upload-area {
@@ -408,11 +412,11 @@
   border: 1px solid #dcdcdc;
   border-radius: 4px;
   overflow: hidden;
-  margin-top: 20px;
+  margin-top:20px;
 }
 
 .input-button {
-  background-color: #b4d4d2ab;
+  background-color:#b4d4d2ab;
   border: none;
   padding: 10px 15px;
   cursor: pointer;
@@ -422,8 +426,8 @@
 }
 
 .input-button .icon-class {
-  font-size: 18px;
-  color: #4c9baf;
+  font-size: 18px; 
+  color: #4c9baf; 
 }
 
 .text-input {
@@ -431,7 +435,7 @@
   padding: 10px;
   flex-grow: 1;
   font-size: 14px;
-  direction: rtl;
+  direction: rtl; 
 }
 
 .text-input::placeholder {
@@ -445,8 +449,8 @@
 .toggle-switch {
   display: flex;
   align-items: center;
-  margin: 20px 0;
-  margin-right: 25px;
+  margin:20px 0;
+  margi-right:25px;
 }
 
 .toggle-switch label {
@@ -470,7 +474,7 @@
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  transition: 0.4s;
+  transition: .4s;
   border-radius: 34px;
 }
 
@@ -482,60 +486,61 @@
   left: 2px;
   bottom: 2px;
   background-color: white;
-  transition: 0.4s;
+  transition: .4s;
   border-radius: 50%;
-}
+} 
 
 input:checked + .slider {
-  background-color: #668fbb;
-}
+  background-color:#668fbb;
+} 
 
-input:checked + .slider:before {
+ input:checked + .slider:before {
   transform: translateX(14px);
 }
-.save-btn-options {
-  background-color: white;
+.save-btn-options{
+  background-color:white;
   color: blue;
   padding: 10px 15px;
-  border: 1px solid blue;
+  border:1px solid blue;
   border-radius: 4px;
   cursor: pointer;
-  width: 100%;
+  width:100%;
 }
-.save-btn-options:hover {
-  background-color: #ffe0b5;
-  color: blue;
+.save-btn-options:hover{
+  background-color:#ffe0b5;
+  color:blue;
 }
 
-input[type="text"] {
+input[type="text"]{
   padding: 10px;
   margin-right: 10px;
-  border: 1px solid #ccc;
   border-radius: 5px;
-  width: calc(85% - 20px);
-  outline: none;
+  width: calc(85% - 20px); 
+  outline: none; 
+
 }
 select {
   padding: 10px;
   margin-right: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: calc(15% - 20px);
-  outline: none;
+  width: calc(15% - 20px); 
+  outline: none; 
 }
 
-button {
+button{
   color: white;
   border: none;
   border-radius: 5px;
   padding: 8px 12px;
   cursor: pointer;
   margin-left: 10px;
-  background-color: none !important;
+  background-color:none !important;
+  
 }
 
 button:focus {
-  outline: none;
+  outline: none; 
 }
 
 .option-container {
@@ -545,7 +550,7 @@ button:focus {
 }
 
 .option-container button {
-  margin-left: 10px;
+  margin-left: 10px; 
 }
 
 .quantity-section {
@@ -567,32 +572,32 @@ button:focus {
   align-items: center;
   margin-bottom: 10px;
   padding: 10px;
-  border: 1px solid #e0e0e0;
-  border-radius: 5px;
-  background-color: #ffffff;
-  direction: "rtl";
+  border: 1px solid #e0e0e0; 
+  border-radius: 5px; 
+  background-color: #ffffff; 
+  direction:"rtl";
 }
-.toggleheader-section {
-  display: flex;
-  justify-content: space-around;
+.toggleheader-section{
+  display:flex;
+  justify-content:space-around;
 }
-.toggleheader-section .right-toggleHeader {
-  width: 50vw;
+.toggleheader-section .right-toggleHeader{
+  width:50vw;
 }
-.toggleheader-section .right-toggleHeader input[type="text"] {
-  width: 75%;
+.toggleheader-section .right-toggleHeader input["text"]{
+  width:75%;
 }
-.toggleheader-section .right-toggleHeader select {
-  width: 15%;
+.toggleheader-section .right-toggleHeader select{
+  width:15%;
 }
-.toggleheader-section .left-toggleHeader {
-  width: 40vw;
+.toggleheader-section .left-toggleHeader{
+  width:40vw;
 }
-.toggleheader-section .left-toggleHeader select {
-  width: 70%;
+.toggleheader-section .left-toggleHeader select{
+  width:70%;
 }
-.toggleheader-section .left-toggleHeader button {
-  width: 15%;
+.toggleheader-section .left-toggleHeader button{
+  width:15%;
 }
 .delete-button {
   background: none;
@@ -607,7 +612,7 @@ button:focus {
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-right: 10px;
-  width: 45%;
+  width: 45%; 
 }
 
 .option-select {
@@ -618,40 +623,41 @@ button:focus {
 .add-option-button {
   border: 2px dashed #93adc4;
   background-color: white;
-  color: #5687d4;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  display: inline-flex;
-  justify-content: center;
+  color:#5687d4; 
+  padding: 10px 20px; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  display: inline-flex; 
+  justify-content:center;
   align-items: center;
-  margin-top: 10px;
-  transition: background-color 0.3s, color 0.3s;
-  width: 100%;
-  text-align: center;
+  margin-top: 10px; 
+  transition: background-color 0.3s, color 0.3s; 
+  width:100%;
+  text-align:center;
 }
 
 .add-option-button:hover {
-  background-color: #6baae1;
-  color: white;
+  background-color:#6baae1; 
+  color: white; 
 }
 
 .plus-icon {
-  margin-left: 10px;
-  font-weight: bold;
+  margin-left: 10px; 
+  font-weight: bold; 
 }
-.addNewOption {
+.addNewOption{
   margin-top: 10px;
-  padding: 10px 20px;
+  padding:10px 20px;
   cursor: pointer;
-  color: #aaa;
-  width: 100%;
+  color:#aaa;
+  width:100%;
 }
-.delete-button-list {
-  background: #e0e0e0;
-  border: 2px solid #ffffff;
+.delete-button-list{
+  background:#e0e0e0;
+  border:2px solid #ffffff;
   color: red;
   cursor: pointer;
-  margin-right: 10px;
-  font-size: 20px;
+  margin-right: 10px; 
+  font-size:20px;
 }
+
