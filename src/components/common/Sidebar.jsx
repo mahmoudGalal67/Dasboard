@@ -70,6 +70,7 @@ const Sidebar = () => {
             backgroundColor: "#1E90FF",
           },
         },
+        
       }}
     >
       <List disablePadding>
@@ -77,7 +78,7 @@ const Sidebar = () => {
           <Stack sx={{ width: "75%" }} direction="row" justifyContent="center">
             <Avatar
               src={assets.images.logo}
-              sx={{ width:150, height:50 ,position:"absolute",right:0,top:0}}
+              sx={{ width:110, height:50 ,position:"absolute",right:0,top:0}}
             />
           </Stack>
         </Toolbar>
@@ -85,7 +86,7 @@ const Sidebar = () => {
           <Stack sx={{ width: "100%" }} direction="row" justifyContent="center">
             <Avatar
               src={assets.images.StoreLogo}
-              sx={{ width:150,height:100,marginTop:"15px"}}
+              sx={{ width:150,height:150,marginTop:"15px"}}
             />
           </Stack>
         </Toolbar>

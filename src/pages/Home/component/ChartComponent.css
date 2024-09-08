@@ -6,3 +6,35 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
+
+@media (min-width: 1500px) {
+  .chart-section {
+    width: 400px; 
+    height: 370px; 
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+}
+@media (min-width: 1700px) {
+  .chart-section {
+    width: 500px; 
+    height: 370px; 
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+}
+
+@media (min-width: 1900px) {
+  .chart-section {
+    width: 700px; 
+    height: 370px; 
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+}

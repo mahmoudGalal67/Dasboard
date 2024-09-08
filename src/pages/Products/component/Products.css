@@ -4,17 +4,24 @@
   gap: 10px;
 }
 
+@media (min-width: 1500px) {
+  .product-flex {
+    display: grid;
+    grid-template-columns: repeat(4,300px);
+    gap: 20px;
+  }
+}
+
 @media (max-width: 1200px) {
   .product-flex {
     display: grid;
     grid-template-columns: repeat(2,400px);
-    gap: 20px;
   }
 }
 @media (max-width: 1000px) {
   .product-flex {
     display: grid;
-    grid-template-columns: repeat(1,700px);
+    grid-template-columns: repeat(1,800px);
   }
 }
 

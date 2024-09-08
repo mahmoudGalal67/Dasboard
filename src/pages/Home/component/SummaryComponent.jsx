@@ -33,7 +33,7 @@ const SummaryComponent = () => {
          <div ><i className="fa-solid fa-sack-dollar icons"></i><span>المبيعات</span> </div>
        </div>
        <div style={{display:"flex",justifyContent:"space-evenly"}}>
-        <div> <i className="fa-regular fa-folder-closed icons"></i> <span>طالبات</span></div>
+        <div> <i className="fa-solid fa-box icons"></i> <span>طبات</span></div>
         <div onClick={handleShow} style={{cursor:"pointer"}}><i className="fa-solid fa-trophy icons-open"></i> <span>هدف الشهر</span></div>
       </div>
       </div>
@@ -46,16 +46,16 @@ const SummaryComponent = () => {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body style={{ textAlign: 'right' }}>
-      <span style={{ marginRight: '10px', fontSize: '24px' }}>💰 حدد الهدف الذي تطمح لتحقيقه في المبيعات</span>
+      <span style={{ marginRight: '20px', fontSize: '24px' }}>💰 حدد الهدف الذي تطمح لتحقيقه في المبيعات</span>
 
-        <div style={{ display: 'flex', alignItems: 'center' }}>
+        <div style={{ display: 'flex', alignItems: 'center'}}>
           
           <Form.Control
             type="text"
             placeholder="0"
             value={goal}
             onChange={(e) => setGoal(e.target.value)}
-            style={{direction:"rtl"}}
+            style={{direction:"rtl",marginLeft:"80px"}}
           />
         </div>
       </Modal.Body>

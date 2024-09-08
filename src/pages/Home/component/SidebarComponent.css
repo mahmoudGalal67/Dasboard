@@ -41,3 +41,28 @@ h5 {
   font-size:10px;
 }
 
+@media (min-width: 1500px) {
+  .sidebar {
+    width: 400px;
+    padding: 10px;
+    height:100hv;
+  
+  }
+}
+@media (min-width: 1700px) {
+  .sidebar {
+    width: 500px;
+    padding: 10px;
+    height:100hv;
+  
+  }
+}
+
+@media (min-width: 1900px) {
+  .sidebar {
+    width: 550px;
+    padding: 10px;
+    height:100hv;
+  
+  }
+}

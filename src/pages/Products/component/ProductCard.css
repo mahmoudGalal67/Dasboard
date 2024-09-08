@@ -312,6 +312,7 @@
   width: 15vw;
   height:37px;
   border:none;
+  cursor:pointer;
 }
 .field .selectClassificationClass select{
   outline: none;
@@ -410,7 +411,7 @@
   display: flex;
   align-items: center;
   border: 1px solid #dcdcdc;
-  border-radius: 4px;
+  border-radius: 11px;
   overflow: hidden;
   margin-top:20px;
 }
@@ -423,6 +424,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left:-3px;
 }
 
 .input-button .icon-class {
@@ -660,4 +662,104 @@ button:focus {
   margin-right: 10px; 
   font-size:20px;
 }
+.CategoryModal .modal-header {
+  border-bottom: 2px solid #dee2e6; 
+}
 
+.CategoryModal .modal-title {
+  color: #343a40;
+  font-size: 1.5rem;
+}
+
+.CategoryModal .modal-body {
+  padding: 20px; 
+  background-color: #ffffff; 
+  color: gray;
+}
+
+.CategoryModal .modal-body form {
+  display: flex;
+  flex-direction: column;
+}
+
+.CategoryModal .modal-body label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.CategoryModal .modal-body input[type="text"] {
+  padding: 10px; 
+  border:none; 
+  border-radius: 4px; 
+  margin-bottom: 15px;
+}
+
+.CategoryModal .modal-body input[type="checkbox"] {
+  margin-left: 10px; 
+}
+
+.CategoryModal .modal-footer {
+  display: flex;
+  justify-content:space-between; 
+  padding: 15px 20px;
+}
+
+.CategoryModal .close-button,
+.CategoryModal .btn {
+  border-radius: 20px;
+}
+
+.CategoryModal .btn-secondary {
+  background-color: #6c757d; 
+  border: none; 
+}
+
+.CategoryModal .btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+.CategoryModal .btn-primary {
+  background-color: #007bff; 
+  border: none; 
+}
+
+.CategoryModal .btn-primary:hover {
+  background-color: #0056b3; 
+}
+.CategoryModal select {
+  width: 98%;
+  padding: 10px;
+  margin-top: 11px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+.field-category{
+  display: flex;
+  border: 1px solid #ced4da;
+  height: 50px;
+  margin-bottom: 25px;
+  width: 98%;
+  border-radius: 10px;
+  margin-right:15px;
+}
+.field-category .InputCategoryClass {
+  width:85%;
+}
+.field-category .InputCategoryClass input{
+  width:100%;
+}
+.field-category .selectCategoryClass{
+  width:10%;
+  margin-top:-10px;
+}
+.field-category .selectCategoryClass select{
+  width:100%;
+  border:none;
+  border-right:1px solid #ced4da;
+}
+.quantitiesClass{
+  background-color: #d8d8d852;
+  box-shadow: 2px 3px 6px 0px #d8d8d8;
+  padding: 11px;
+  border-radius: 4px;
+}
