@@ -1,73 +1,69 @@
-.hompePage{
-  height:100vh;
-  
+.hompePage {
+  height: 100vh;
 }
-.headerComponent{
-  margin-bottom:80px;
+.headerComponent {
+  margin-bottom: 80px;
 }
- .app-container{
+.app-container {
   display: flex;
   height: 100vh;
- }
- .right{
-  flex:5;
-  display: flex;
-  flex-direction:column;
- }
- .left{
-  felx:3;
-   
- }
-.homepage-contentComponent{
-  display: flex;  
 }
-.CharComponentClass,.SummarComponentClass{
-  flex:0; 
+.right {
+  flex: 5;
   display: flex;
-  justify-content: center;
-  
+  flex-direction: column;
 }
 
-.ordersComponentClass{
-  margin-top:50px;
-  width:48vw;
+.homepage-contentComponent {
+  display: flex;
+}
+.CharComponentClass,
+.SummarComponentClass {
+  flex: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.ordersComponentClass {
+  margin-top: 50px;
+  width: 48vw;
 }
 @media (max-width: 1200px) {
   .app-container {
-    flex-direction: column; 
+    flex-direction: column;
   }
 
   .right {
     flex: none;
   }
-  
+
   .left {
-    flex: none; 
+    flex: none;
   }
 
   .homepage-contentComponent {
-    flex-direction: column; 
+    flex-direction: column;
   }
 
   .SummarComponentClass {
-    order: 1; 
-    width:90%;
-    margin-bottom:10px;
+    order: 1;
+    width: 90%;
+    margin-bottom: 10px;
   }
 
   .CharComponentClass {
-    order: 2; 
-    width:90%;
+    order: 2;
+    width: 90%;
   }
 
   .ordersComponentClass {
-    order: 3; 
-    width:90%;
+    order: 3;
+    width: 90%;
   }
 
   .SidebarComponentClass {
-    order: 4; 
-    margin-top: 20px; 
-    width:90%;
+    order: 4;
+    margin-top: 20px;
+    width: 90%;
   }
 }
