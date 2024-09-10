@@ -251,7 +251,7 @@
   margin-right: 0;
 }
 .field .selectClass {
-  width: 15vw;
+  width: 35vw;
   padding-left: 10px;
 }
 
@@ -348,7 +348,7 @@
 
 .field input,
 .field select {
-  width: 100%;
+  width: 80%;
   padding: 8px;
   border: none;
   border-radius: 4px;
@@ -587,6 +587,7 @@ button:focus {
   width: 15%;
 }
 .toggleheader-section .left-toggleHeader {
+  display:flex;
   width: 40vw;
 }
 .toggleheader-section .left-toggleHeader select {
@@ -721,7 +722,7 @@ button:focus {
   background-color: #0056b3;
 }
 .CategoryModal select {
-  width: 98%;
+  width: 92%;
   padding: 10px;
   margin-top: 11px;
   border: 1px solid #ced4da;
@@ -736,6 +737,7 @@ button:focus {
   border-radius: 10px;
   margin-right: 15px;
 }
+
 .field-category .InputCategoryClass {
   width: 85%;
 }
@@ -789,6 +791,11 @@ button:focus {
   color: white;
   border-color: #005379;
 }
+.btn-CustomClass-color{
+  background-color: #005379; 
+  color: white;
+  border-color: #005379;
+}
 .custom-select {
   width: 30%;
   padding: 5px;
@@ -811,6 +818,7 @@ button:focus {
   padding: 10px;
   border: 1px solid #e2e2e2;
   border-radius: 8px;
+  margin-top:20px;
 }
 
 .file-name-group {
@@ -833,7 +841,7 @@ button:focus {
 }
 
 .upload-group .upload-btn {
-  background-color: #004d50; /* Dark green background */
+  background-color: #004d50; 
   color: white;
   border: none;
   border-radius: 5px;
@@ -888,9 +896,62 @@ button:focus {
   justify-content: space-between;
   width: 100%;
 }
+.DetailsBodyClass .product-details-section .form-productDetails-label-class{
+  margin-right: 20px;
+  color: #aaaaaaad;
+}
+.DetailsBodyClass .product-details-section .form-group input[type="text"],select{
+  padding: 10px;
+  margin-right: 30px;
+  border-radius: 5px;
+  width: calc(100% - 50px);
+  outline: none;
+}
+.DetailsBodyClass .product-details-section .form-group-flex,.DetailsBodyClass .product-details-section .form-group-flex-3col{
+  display:flex;
+  justify-content: space-evenly;
+  margin-top:10px;
+  margin-right: 10px;
+  margin-bottom:10px;
+}
+.DetailsBodyClass .product-details-section .form-group-flex .form-group-flex-one{
+   width:47%;
+}
+.DetailsBodyClass .product-details-section .form-group-flex .form-group-flex-one input[type="text"]{
+  width:96%;
+ 
+}
+.DetailsBodyClass .product-details-section .form-group-flex-3col .form-group-flex-col{
+  width:31%;
+}
+.DetailsBodyClass .product-details-section .form-group-flex-3col .form-group-flex-col input[type="text"]{
+  width:91%;
+}
+.field-productDetails{
+  display: flex;
+  border: 1px solid #ced4da;
+  height: 50px;
+  margin-bottom: 25px;
+  width: 95%;
+  border-radius: 10px;
+  margin-right: 20px;
+}
 
-
-
+.field-productDetails .InputproductDetailsClass {
+  width: 85%;
+}
+.field-productDetails .InputproductDetailsClass input {
+  width: 100%;
+}
+.field-productDetails .selectproductDetailsClass{
+  width: 10%;
+  margin-top: -10px;
+}
+.field-productDetails .selectproductDetailsClass select {
+  width: 100%;
+  border: none;
+  border-right: 1px solid #ced4da;
+}
 @media (min-width: 1500px) {
   .product-card {
     width: 300px;

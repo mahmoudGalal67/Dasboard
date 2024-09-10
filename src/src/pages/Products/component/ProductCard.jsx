@@ -3,7 +3,7 @@ import "./ProductCard.css";
 import { MdPhoto } from "react-icons/md";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbtack } from "@fortawesome/free-solid-svg-icons";
-import { Modal, Button, Form, Row, Col } from "react-bootstrap";
+import { Modal, Button, Form, Row, Col, Dropdown } from "react-bootstrap";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { MdDelete } from "react-icons/md";
 import { FaTrash, FaUpload } from 'react-icons/fa';
@@ -135,17 +135,56 @@ const ProductCard = ({ imageUrl, price }) => {
   const handleDetailsModalClose = () => setShowDetailsModal(false);
   const handleDetailsModalShow = () => setShowDetailsModal(true);
 
+  const [activeButton, setActiveButton] = useState(null);
+
   const [showCustomFields, setShowCustomFields] = useState(false);
+  const [showProductDetailsSection, setShowProductDetailsSection] = useState(true);
+
   const handleCustomFieldsToggle = () => {
     setShowCustomFields(true);
     setShowFilesSection(false);
+    setShowProductDetailsSection(false)
+    setActiveButton('customFields');
   };
 
   const [showFilesSection, setShowFilesSection] = useState(false);
   const handleFilesToggle = () => {
     setShowFilesSection(true);
     setShowCustomFields(false);
+    setShowProductDetailsSection(false)
+    setActiveButton('files');
   };
+
+  const handleProductDetailsSectionToggle = () => {
+    setShowFilesSection(false);
+    setShowCustomFields(false);
+    setShowProductDetailsSection(true)
+  }
+
+  const [fileAction, setFileAction] = useState('upload');
+  const [fileLink, setFileLink] = useState('');
+
+  const handleFileActionChange = (id, action) => {
+    setFileSections(prevSections =>
+      prevSections.map(section =>
+        section.id === id ? { ...section, action } : section
+      )
+    );
+  };
+
+  const [fileSections, setFileSections] = useState([{ id: Date.now(), action: 'upload', link: '' }]);
+
+  const handleDeleteFile = (id) => {
+    setFileSections(prevSections => prevSections.filter(section => section.id !== id));
+  };
+
+  const handleAddFileSection = () => {
+    setFileSections(prevSections => [
+      ...prevSections,
+      { id: Date.now(), action: 'upload', link: '' }
+    ]);
+  };
+
   return (
     <div className="product-card">
       <div className="product-image">
@@ -396,6 +435,7 @@ const ProductCard = ({ imageUrl, price }) => {
                       <option>اللون</option>
                       <option>الصورة</option>
                     </select>
+
                     {showDeleteButton && (
                       <button
                         onClick={removeOptionHeaderList}
@@ -462,6 +502,7 @@ const ProductCard = ({ imageUrl, price }) => {
                         <option>اللون</option>
                         <option>الصورة</option>
                       </select>
+
                       {showList && (
                         <button
                           onClick={removeOptionList}
@@ -658,68 +699,172 @@ const ProductCard = ({ imageUrl, price }) => {
         </div>
         <div className="modal-subheader">
           <Button
-            variant="outline-secondary"
+            style={{
+              backgroundColor: activeButton === 'files' ? '#005379' : 'transparent',
+              color: activeButton === 'files' ? 'white' : '#000',
+              borderColor: activeButton === 'files' ? '#005379' : '#ccc',
+              borderStyle: 'solid',
+              borderWidth: '1px'
+            }}
             onClick={handleFilesToggle}
             className="subheader-button"
           >
             الملفات المرفقة
           </Button>
-          <Button variant="outline-secondary" onClick={handleCustomFieldsToggle} className="subheader-button">
+          <Button
+            variant="outline-secondary"
+            onClick={handleCustomFieldsToggle}
+            className="subheader-button">
             الحقول المخصصة
           </Button>
-          <Button variant="outline-secondary" className="subheader-button">بيانات المنتج</Button>
+          <Button variant="outline-secondary" className="subheader-button" onClick={handleProductDetailsSectionToggle} >بيانات المنتج</Button>
         </div>
         <Modal.Body className="DetailsBodyClass">
+          {showProductDetailsSection && (
+            <div className="product-details-section">
+              <div className="form-group">
+                <label className="form-productDetails-label-class" style={{marginRight:"43px"}}>سعر التكلفة</label>
+                <input type="text" placeholder="سعر التكلفة" className="form-control" />
+              </div>
+              <div className="form-group-flex">
+                <div className="form-group-flex-one">
+                  <label className="form-productDetails-label-class">السعر المخفض</label>
+                  <input type="text" placeholder="السعر المخفض" className="form-control" />
+                </div>
+                <div className="form-group-flex-one">
+                  <label className="form-productDetails-label-class">نهاية التخفيض</label>
+                  <input type="text" placeholder="نهاية التخفيض (اختباري)" className="form-control" />
+                </div>
+              </div>
+              <div className="form-group-flex-3col">
+                <div className="form-group-flex-col">
+                  <label className="form-productDetails-label-class">رمز التخزين</label>
+                  <input type="text" placeholder="SUK رمز التخزين" className="form-control" />
+                </div>
+                <div className="form-group-flex-col">
+                  <label className="form-productDetails-label-class">GTIN</label>
+                  <input type="text" placeholder="GTIN" className="form-control" />
+                </div>
+                <div className="form-group-flex-col">
+                  <label className="form-productDetails-label-class">MPN</label>
+                  <input type="text" placeholder="MPN" className="form-control" />
+                </div>
+
+              </div>
+              <div className="form-group" style={{marginBottom:"20px"}}>
+                <label className="form-productDetails-label-class" style={{marginRight:"43px"}}>تحديد الماركة التجارية</label>
+                <select style={{ width: "calc(100% - 50px)" }}>
+                  <option>البحث عن الماركة</option>
+                </select>
+              </div>
+              <div className="form-group">
+                <label className="form-productDetails-label-class" style={{marginRight:"43px"}}>العنوان الفرعي</label>
+                <div className="field-productDetails">
+                  <div className="InputproductDetailsClass">
+                    <input type="text" placeholder="العنوان الفرعي"  style={{border:"none"}}/>
+                  </div>
+                  <div className="selectproductDetailsClass" style={{marginTop:"2px"}}>
+                    <select
+                      name="language"
+                      value={productDetails.language}
+                      onChange={handleChange}
+                    >
+                      <option value="AR">AR</option>
+                      <option value="EN">EN</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div className="form-group">
+                <label className="form-productDetails-label-class" style={{marginRight:"43px"}}>العنوان الترويجي</label>
+                <input type="text" placeholder="العنوان الترويجي" className="form-control" />
+              </div>
+            </div>
+          )}
           {showFilesSection && (
             <div>
-              <div style={{color:"#aaa",fontSize:"13px"}}>
-              <p>هناك طريقتين لرفع الملفات الرقمية:</p>
-              <p>1. رفع الملف: والذي يتيح لك رفع الملفات من جهازك حتى حجم 100 ميجا</p>
-              <p>2. رابط الملف: بامكانك رفع الملفات الكبيرة على خدمات التخزين السحابية ثم اضافة الرابط</p>
-              </div>
-            <div className="file-upload-section">
-              <div className="form-group" style={{display:"flex",backgroundColor:"white"}}>
-                <div className="InputDetailsClass" style={{width:"80%"}}>
-                  <input type="text" placeholder="اسم الملف" required style={{width:"100%",outline:"none",border:"none"}} />
-                </div>
-                <div className="selectDetailsClass" style={{width:"15%"}}>
-                  <select
-                    name="language"
-                    value={productDetails.language}
-                    onChange={handleChange}
-                    style={{width:"100%", outline:"none",border:"none",marginTop:"3px"}}
-                  >
-                    <option value="AR">AR</option>
-                    <option value="EN">EN</option>
-                  </select>
-                </div>
+              <div style={{ color: "#aaa", fontSize: "13px" }}>
+                <p>هناك طريقتين لرفع الملفات الرقمية:</p>
+                <p>1. رفع الملف: والذي يتيح لك رفع الملفات من جهازك حتى حجم 100 ميجا</p>
+                <p>2. رابط الملف: بامكانك رفع الملفات الكبيرة على خدمات التخزين السحابية ثم اضافة الرابط</p>
               </div>
 
-              <div className="form-group d-flex"  style={{display:"flex",backgroundColor:"white", marginTop:"5px"}}>
-                <div style={{width:"40%"}}>
-                <Button variant="outline-secondary" className="mr-2" style={{width:"100%", outline:"none",border:"none"}}>
-                  <FaUpload className="mr-1" /> رفع الملف
-                </Button>
-                </div>
-                <div style={{width:"40%", outline:"none",border:"none",marginTop:"3px"}}>
-                <Form.Control type="file" style={{ display: 'none' }} id="fileUpload" />
-                <Form.Label htmlFor="fileUpload" className="file-upload-label" style={{width:"100%", outline:"none",border:"none",marginTop:"3px"}}>
-                  اختر الملف
-                </Form.Label>
-                </div>
-                <div style={{width:"15%", outline:"none",border:"none",marginTop:"3px"}}>
-                <Button variant="outline-secondary" className="mr-2" style={{width:"100%", outline:"none",border:"none"}}>
-                  استعراض
-                </Button>
-                </div>
+              {fileSections.map(section => (
+                <div key={section.id} className="file-upload-section">
+                  <div className="form-group" style={{ display: "flex", backgroundColor: "white", borderRadius: "10px" }}>
+                    <div className="InputDetailsClass" style={{ width: "80%" }}>
+                      <input type="text" placeholder="اسم الملف" required style={{ width: "100%", outline: "none", border: "none" }} />
+                    </div>
+                    <div className="selectDetailsClass" style={{ width: "15%" }}>
+                      <select
+                        name="language"
+                        value={productDetails.language}
+                        onChange={handleChange}
+                        style={{ width: "100%", outline: "none", border: "none", marginTop: "3px" }}
+                      >
+                        <option value="AR">AR</option>
+                        <option value="EN">EN</option>
+                      </select>
+                    </div>
+                  </div>
 
-              </div>
-        
+                  <div className="form-group d-flex" style={{ display: "flex", backgroundColor: "white", marginTop: "10px", height: "50px", borderRadius: "10px" }}>
+                    <div style={{ width: "20%" }}>
+                      <select
+                        value={section.action}
+                        onChange={(e) => handleFileActionChange(section.id, e.target.value)}
+                        style={{ width: "81%", height: "50px", borderRadius: "10px", outline: "none", border: "none", padding: "0 10px" }}
+                      >
+                        <option value="upload">رفع الملف</option>
+                        <option value="link">رابط الملف</option>
+                      </select>
+                    </div>
 
-              <Button variant="danger" className="delete-button mt-2">
-                <FaTrash className="mr-1" /> حذف الملف
-              </Button>
-            </div>
+                    {section.action === 'upload' && (
+                      <>
+                        <div style={{ width: "15%", outline: "none", border: "none" }}>
+                          <Form.Label variant="" className="mr-2" style={{ width: "100%", outline: "none", border: "none", marginTop: "15px", paddingRight: "14px" }}>
+                            اختر ملف
+                          </Form.Label>
+                        </div>
+                        <div style={{ width: "40%", outline: "none", border: "none", backgroundColor: "rgb(4 147 227 / 94%)", width: "100px", position: "absolute", left: 30, height: "50px", borderRadius: "10px" }}>
+                          <Form.Control type="file" style={{ display: 'none' }} id="fileUpload" />
+                          <Form.Label htmlFor="fileUpload" className="file-upload-label" style={{ width: "100%", outline: "none", border: "none", marginTop: "5px", backgroundColor: "rgb(4 147 227 / 94%)" }}>
+                            <FaUpload className="mr-1" style={{ marginLeft: "8px" }} />
+                            استعراض
+                          </Form.Label>
+                        </div>
+                      </>
+                    )}
+
+
+                    {section.action === 'link' && (
+                      <div>
+                        <div style={{ width: "60%", outline: "none", border: "none", marginTop: "5px" }}>
+                          <input
+                            type="text"
+                            placeholder="أدخل رابط الملف"
+                            value={fileLink}
+                            onChange={(e) => setFileLink(e.target.value)}
+                            style={{ width: "100%", borderRadius: "10px", outline: "none", border: "none", padding: "10px" }}
+                          />
+                        </div>
+
+                        <p style={{ color: "orange", margin: "7px 0", width: "90%", position: "absolute", right: "35px" }}>
+                          إضافة رابط ملف (PDF) قد يعرّض المنتج للنسخ، لذا تأكّد من رفع الملف مباشرةً من جهازك لحماية محتواه.
+                        </p>
+
+                      </div>
+                    )}
+                  </div>
+                  <Button variant="danger" className="delete-button mt-5" onClick={() => handleDeleteFile(section.id)}>
+                    <FaTrash className="mr-1" /> حذف الملف
+                  </Button>
+                </div>
+              ))}
+              <button onClick={handleAddFileSection} className="addNewOption">
+                <span className="plus-icon">+</span>
+              </button>
             </div>
           )}
           {showCustomFields && (
