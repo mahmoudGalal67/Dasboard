@@ -21,7 +21,7 @@ import SidebarItem from "./SidebarItem";
 import SidebarItemCollapse from "./SidebarItemCollapse";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useTheme } from "../navbar/ThemeContext";
-
+import './Sidebar.css';
 const Sidebar = () => {
   const { isDarkMode } = useTheme();
   const [anchorEl, setAnchorEl] = useState(null);
@@ -46,6 +46,7 @@ const Sidebar = () => {
     <Drawer
       anchor="right"
       variant="permanent"
+      className="sidebarClass"
       sx={{
         width: sizeConfigs.sidebar.width,
         flexShrink: 0,

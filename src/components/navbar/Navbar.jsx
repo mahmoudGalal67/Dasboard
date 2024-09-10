@@ -22,7 +22,7 @@ const Navbar = () => {
   const handleModalShow = () => setShowModal(true);
 
   useEffect(() => {
-    document.body.style.backgroundColor = isDarkMode ? "#333" : "#fff";
+    document.body.style.backgroundColor = isDarkMode ? "#333" : "#f5f5f5";
   }, [isDarkMode]);
 
   const [copySuccess, setCopySuccess] = useState(false);

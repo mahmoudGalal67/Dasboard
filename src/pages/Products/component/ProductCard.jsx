@@ -6,7 +6,7 @@ import { faThumbtack } from "@fortawesome/free-solid-svg-icons";
 import { Modal, Button, Form, Row, Col } from "react-bootstrap";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { MdDelete } from "react-icons/md";
-
+import { FaTrash, FaUpload } from 'react-icons/fa';
 function ToggleCheckButton() {
   const [isChecked, setIsChecked] = useState(false);
 
@@ -130,6 +130,22 @@ const ProductCard = ({ imageUrl, price }) => {
 
   const [unlimited, setUnlimited] = useState(false);
 
+  const [showDetailsModal, setShowDetailsModal] = useState(false);
+
+  const handleDetailsModalClose = () => setShowDetailsModal(false);
+  const handleDetailsModalShow = () => setShowDetailsModal(true);
+
+  const [showCustomFields, setShowCustomFields] = useState(false);
+  const handleCustomFieldsToggle = () => {
+    setShowCustomFields(true);
+    setShowFilesSection(false);
+  };
+
+  const [showFilesSection, setShowFilesSection] = useState(false);
+  const handleFilesToggle = () => {
+    setShowFilesSection(true);
+    setShowCustomFields(false);
+  };
   return (
     <div className="product-card">
       <div className="product-image">
@@ -218,7 +234,7 @@ const ProductCard = ({ imageUrl, price }) => {
           </div>
         </div>
         <div className="field">
-          <div className="DetailsClass">
+          <div className="DetailsClass" onClick={handleDetailsModalShow} style={{ cursor: 'pointer' }}>
             <p>بيانات المنتج</p>
           </div>
           <div className="selectDetailsClass">
@@ -517,15 +533,15 @@ const ProductCard = ({ imageUrl, price }) => {
                   </Row>
                 </Form.Group>
                 {quantities.map((item, index) => (
-                <div key={index} className="d-flex justify-content-between mb-2">
+                  <div key={index} className="d-flex justify-content-between mb-2">
                     <div className="flex-grow-1 bg-light p-2 rounded">
-                      <span style={{fontSize:"10px",border:"1px solid #aaa" ,padding:"3px",borderRadius:"4px",marginLeft:"5px"}}> +  </span>
+                      <span style={{ fontSize: "10px", border: "1px solid #aaa", padding: "3px", borderRadius: "4px", marginLeft: "5px" }}> +  </span>
                       {item.color}
                     </div>
                     <div className="ms-2 bg-light p-2 rounded text-end" style={{ minWidth: '120px' }}>
                       متوفر عدد {item.available}
                     </div>
-                </div>
+                  </div>
                 ))}
               </Form>
             </div>
@@ -621,6 +637,114 @@ const ProductCard = ({ imageUrl, price }) => {
           </Button>
         </Modal.Footer>
       </Modal>
+
+      <Modal
+        show={showDetailsModal}
+        onHide={handleDetailsModalClose}
+        centered
+        size="lg"
+        style={{ zIndex: 9999999999, maxWidth: '80%', width: '80%' }}
+        className="DetailsModalClass"
+      >
+        <div className="modal-header">
+          <Button
+            variant="link"
+            onClick={handleDetailsModalClose}
+            className="close-button"
+          >
+            &times;
+          </Button>
+          <h4>(netflix) بيانات المنتج</h4>
+        </div>
+        <div className="modal-subheader">
+          <Button
+            variant="outline-secondary"
+            onClick={handleFilesToggle}
+            className="subheader-button"
+          >
+            الملفات المرفقة
+          </Button>
+          <Button variant="outline-secondary" onClick={handleCustomFieldsToggle} className="subheader-button">
+            الحقول المخصصة
+          </Button>
+          <Button variant="outline-secondary" className="subheader-button">بيانات المنتج</Button>
+        </div>
+        <Modal.Body className="DetailsBodyClass">
+          {showFilesSection && (
+            <div>
+              <div style={{color:"#aaa",fontSize:"13px"}}>
+              <p>هناك طريقتين لرفع الملفات الرقمية:</p>
+              <p>1. رفع الملف: والذي يتيح لك رفع الملفات من جهازك حتى حجم 100 ميجا</p>
+              <p>2. رابط الملف: بامكانك رفع الملفات الكبيرة على خدمات التخزين السحابية ثم اضافة الرابط</p>
+              </div>
+            <div className="file-upload-section">
+              <div className="form-group" style={{display:"flex",backgroundColor:"white"}}>
+                <div className="InputDetailsClass" style={{width:"80%"}}>
+                  <input type="text" placeholder="اسم الملف" required style={{width:"100%",outline:"none",border:"none"}} />
+                </div>
+                <div className="selectDetailsClass" style={{width:"15%"}}>
+                  <select
+                    name="language"
+                    value={productDetails.language}
+                    onChange={handleChange}
+                    style={{width:"100%", outline:"none",border:"none",marginTop:"3px"}}
+                  >
+                    <option value="AR">AR</option>
+                    <option value="EN">EN</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="form-group d-flex"  style={{display:"flex",backgroundColor:"white", marginTop:"5px"}}>
+                <div style={{width:"40%"}}>
+                <Button variant="outline-secondary" className="mr-2" style={{width:"100%", outline:"none",border:"none"}}>
+                  <FaUpload className="mr-1" /> رفع الملف
+                </Button>
+                </div>
+                <div style={{width:"40%", outline:"none",border:"none",marginTop:"3px"}}>
+                <Form.Control type="file" style={{ display: 'none' }} id="fileUpload" />
+                <Form.Label htmlFor="fileUpload" className="file-upload-label" style={{width:"100%", outline:"none",border:"none",marginTop:"3px"}}>
+                  اختر الملف
+                </Form.Label>
+                </div>
+                <div style={{width:"15%", outline:"none",border:"none",marginTop:"3px"}}>
+                <Button variant="outline-secondary" className="mr-2" style={{width:"100%", outline:"none",border:"none"}}>
+                  استعراض
+                </Button>
+                </div>
+
+              </div>
+        
+
+              <Button variant="danger" className="delete-button mt-2">
+                <FaTrash className="mr-1" /> حذف الملف
+              </Button>
+            </div>
+            </div>
+          )}
+          {showCustomFields && (
+            <div className="form-group">
+              <select className="custom-select">
+                <option value="">اضافة قسم</option>
+                <option value="">لا يوجد حقول متاحة</option>
+
+              </select>
+            </div>
+          )}
+        </Modal.Body>
+        <Modal.Footer style={{ backgroundColor: "rgb(170 170 170 / 13%)" }}>
+          <div className="footerDetailsClass">
+            <div>
+              <Button variant="secondary" onClick={handleDetailsModalClose}>إلغاء</Button>
+            </div>
+            <div>
+              <Button variant="primary">حفظ بيانات المنتج</Button>
+            </div>
+          </div>
+        </Modal.Footer>
+      </Modal>
+
+
     </div>
   );
 };

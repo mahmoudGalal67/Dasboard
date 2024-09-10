@@ -1,0 +1,21 @@
+@media (min-width: 1700px) {
+  .sidebarClass {
+    width:500px;
+  }
+}
+@media (min-width: 1500px) {
+  .sidebarClass {
+    width:450px;
+  }
+}
+@media (max-width: 1200px) {
+    .sidebarClass {
+      width:250px;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .sidebarClass {
+      display:none;
+    }
+  }

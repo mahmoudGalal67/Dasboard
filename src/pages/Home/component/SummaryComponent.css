@@ -63,13 +63,14 @@ span{
     width:500px;
   }
 }
-
-@media (min-width: 1900px) {
+@media (min-width: 1800px) {
   .summary-section {
     padding: 10px;
     background-color: #fff;
     border: 1px solid #dee2e6;
     height:370px;
-    width:700px;
+    width:550px;
   }
 }
+
+

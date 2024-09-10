@@ -47,23 +47,23 @@
 
   .SummarComponentClass {
     order: 1;
-    width: 90%;
+    width: 100%;
     margin-bottom: 10px;
   }
 
   .CharComponentClass {
     order: 2;
-    width: 90%;
+    width: 100%;
   }
 
   .ordersComponentClass {
     order: 3;
-    width: 90%;
+    width: 100%;
   }
 
   .SidebarComponentClass {
     order: 4;
     margin-top: 20px;
-    width: 90%;
+    width: 100%;
   }
 }

@@ -1,13 +1,13 @@
 .product-flex {
   display: grid;
-  grid-template-columns: repeat(3,310px);
+  grid-template-columns: repeat(3,1fr);
   gap: 10px;
 }
 
-@media (min-width: 1500px) {
+@media (min-width: 1800px) {
   .product-flex {
     display: grid;
-    grid-template-columns: repeat(4,300px);
+    grid-template-columns: repeat(4,1fr);
     gap: 20px;
   }
 }
@@ -15,13 +15,13 @@
 @media (max-width: 1200px) {
   .product-flex {
     display: grid;
-    grid-template-columns: repeat(2,400px);
+    grid-template-columns: repeat(2,1fr);
   }
 }
 @media (max-width: 1000px) {
   .product-flex {
     display: grid;
-    grid-template-columns: repeat(1,800px);
+    grid-template-columns: repeat(1, 1fr); 
   }
 }
 

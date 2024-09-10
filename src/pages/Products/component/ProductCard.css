@@ -757,3 +757,154 @@ button:focus {
   padding: 11px;
   border-radius: 4px;
 }
+.DetailsBodyClass{
+  direction:rtl !important;
+}
+
+.modal-subheader {
+  display: flex;
+  justify-content: space-around;
+  background-color: #e0f0fa;
+  border: 1px solid #0943af;  
+  border-radius: 13px;
+  margin-top:5px;
+}
+
+.subheader-button {
+  margin: 0 5px; 
+  color: #005379;
+  border:none !important; 
+  width:40%;
+
+}
+
+.subheader-button:hover {
+  background-color: #005379; 
+  color: white; 
+}
+
+.subheader-button:active,
+.subheader-button:focus {
+  background-color: #005379; 
+  color: white;
+  border-color: #005379;
+}
+.custom-select {
+  width: 30%;
+  padding: 5px;
+  background-color: #e7eff7;
+  border: 1px solid #9fbfe3;
+  border-radius: 5px;
+  font-size: 20px;
+  color: #000;
+  appearance: none;
+  position: relative;
+}
+.footerDetailsClass{
+  display:flex;
+  justify-content: space-between;
+
+}
+
+.file-upload-section {
+  background-color: #f7f7f7;
+  padding: 10px;
+  border: 1px solid #e2e2e2;
+  border-radius: 8px;
+}
+
+.file-name-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.file-name-group select {
+  width: 120px;
+  border-radius: 4px;
+  padding: 6px;
+  border: 1px solid #ced4da;
+}
+
+.upload-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.upload-group .upload-btn {
+  background-color: #004d50; /* Dark green background */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-group .upload-btn .icon {
+  margin-left: 6px;
+}
+
+.upload-group select {
+  border-radius: 4px;
+  padding: 6px;
+  border: 1px solid #ced4da;
+  margin-left: 10px;
+}
+
+.delete-button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-button .icon {
+  margin-left: 6px;
+}
+
+
+.file-upload-label {
+  background-color: white;
+  border: 1px solid #ced4da;
+  padding: 8px;
+  border-radius: 5px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.mt-2 {
+  margin-top: 10px;
+}
+
+.footerDetailsClass {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+
+
+@media (min-width: 1500px) {
+  .product-card {
+    width: 300px;
+  }
+  
+}
+@media (max-width: 1200px) {
+  .product-card {
+    width: 380px;
+  }
+}
+@media (max-width: 1000px) {
+  .product-card {
+    width: 400px;
+    justify-content: center !important;
+  }
+}
