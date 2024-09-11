@@ -7,6 +7,8 @@ import { Modal, Button, Form, Row, Col, Dropdown } from "react-bootstrap";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { MdDelete } from "react-icons/md";
 import { FaTrash, FaUpload } from 'react-icons/fa';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 function ToggleCheckButton() {
   const [isChecked, setIsChecked] = useState(false);
 
@@ -184,6 +186,10 @@ const ProductCard = ({ imageUrl, price }) => {
       { id: Date.now(), action: 'upload', link: '' }
     ]);
   };
+
+  const [description, setDescription] = useState('');
+
+  const [showTotal, setShowTotal] = useState(false);
 
   return (
     <div className="product-card">
@@ -563,12 +569,19 @@ const ProductCard = ({ imageUrl, price }) => {
                         type="checkbox"
                         checked={unlimited}
                         onChange={() => setUnlimited(!unlimited)}
-
+                        onClick={()=> setShowTotal(true)}
                       />
                     </Col>
                     <Col>
                       <Form.Label className="mb-0">
                         الكمية غير محدودة
+                      </Form.Label>
+                    </Col>
+                    <Col>
+                      <Form.Label className="mb-0">
+                        {showTotal && (
+                          <p style={{position:"absolute",left:"40px",top:"510px"}}>إجمالي الكمية 26</p>
+                        )}
                       </Form.Label>
                     </Col>
                   </Row>
@@ -723,7 +736,7 @@ const ProductCard = ({ imageUrl, price }) => {
           {showProductDetailsSection && (
             <div className="product-details-section">
               <div className="form-group">
-                <label className="form-productDetails-label-class" style={{marginRight:"43px"}}>سعر التكلفة</label>
+                <label className="form-productDetails-label-class" style={{ marginRight: "43px" }}>سعر التكلفة</label>
                 <input type="text" placeholder="سعر التكلفة" className="form-control" />
               </div>
               <div className="form-group-flex">
@@ -751,19 +764,19 @@ const ProductCard = ({ imageUrl, price }) => {
                 </div>
 
               </div>
-              <div className="form-group" style={{marginBottom:"20px"}}>
-                <label className="form-productDetails-label-class" style={{marginRight:"43px"}}>تحديد الماركة التجارية</label>
-                <select style={{ width: "calc(100% - 50px)" }}>
+              <div className="form-group" style={{ marginBottom: "20px" }}>
+                <label className="form-productDetails-label-class" style={{ marginRight: "43px" }}>تحديد الماركة التجارية</label>
+                <select style={{ width: "calc(98% - 50px)" }}>
                   <option>البحث عن الماركة</option>
                 </select>
               </div>
               <div className="form-group">
-                <label className="form-productDetails-label-class" style={{marginRight:"43px"}}>العنوان الفرعي</label>
-                <div className="field-productDetails">
+                <label className="form-productDetails-label-class" style={{ marginRight: "43px" }}>العنوان الفرعي</label>
+                <div className="field-productDetails" style={{ width: "calc(98% - 50px)" }}>
                   <div className="InputproductDetailsClass">
-                    <input type="text" placeholder="العنوان الفرعي"  style={{border:"none"}}/>
+                    <input type="text" placeholder="العنوان الفرعي" style={{ border: "none" }} />
                   </div>
-                  <div className="selectproductDetailsClass" style={{marginTop:"2px"}}>
+                  <div className="selectproductDetailsClass" style={{ marginTop: "2px" }}>
                     <select
                       name="language"
                       value={productDetails.language}
@@ -774,11 +787,186 @@ const ProductCard = ({ imageUrl, price }) => {
                     </select>
                   </div>
                 </div>
+                <p style={{ marginRight: "30px", marginTop: "-20px" }}>
+                  العنوان الفرعي يظهر تحت اسم المنتج في المتجر، بحد اقصى 35 حرف. نسبة الخصم:
+                  <span className="spanProductDetailsClass">
+                    percent
+                  </span>
+                  مبلغ الخصم
+                  <span className="spanProductDetailsClass">discount</span>
+                  ماركة
+                  <span className="spanProductDetailsClass">brand</span>
+
+                </p>
               </div>
               <div className="form-group">
-                <label className="form-productDetails-label-class" style={{marginRight:"43px"}}>العنوان الترويجي</label>
-                <input type="text" placeholder="العنوان الترويجي" className="form-control" />
+                <label className="form-productDetails-label-class" style={{ marginRight: "43px" }}>العنوان الترويجي</label>
+                <input type="text" placeholder="العنوان الترويجي" style={{ width: "calc(98% - 50px)", border: "1px solid rgb(225 218 218)" }} />
+                <p style={{ marginRight: "40px" }}>
+                  يظهر العنوان الترويجي على صورة المنتج بحد أقصى 25 حرف. نسبة الخصم:
+                  <span className="spanProductDetailsClass">
+                    percent
+                  </span>
+                  مبلغ الخصم
+                  <span className="spanProductDetailsClass">discount</span>
+                  ماركة
+                  <span className="spanProductDetailsClass">brand</span>
+
+                </p>
               </div>
+              <div className="form-group">
+                <label className="form-productDetails-label-class" style={{ marginRight: "43px" }}>
+                  تحديد كمية المنتج
+                </label>
+                <select
+                  className="form-control"
+                  style={{
+                    width: "calc(98% - 50px)",
+                    border: "1px solid rgb(225 218 218)",
+                    backgroundColor: "#e6f9ff",
+                  }}
+                >
+                  <option value="">تحديد كمية المنتج</option>
+                  <option value="enabled">تفعيل خيار تحديد الكمية</option>
+                  <option value="rules">قوانين تحديد الكمية</option>
+                  <option value="disable">تعطيل خيار تحديد الكمية</option>
+                </select>
+              </div>
+              <div className="form-group">
+                <label className="form-productDetails-label-class" style={{ marginRight: "41px", marginTop: "15px" }}>
+                  قنوات عرض المنتج
+                </label>
+                <p style={{ marginRight: "40px" }}>قم بتحديد قنوات عرض المنتج</p>
+                <select
+                  className="form-control"
+                  style={{
+                    width: "calc(98% - 50px)",
+                    border: "1px solid rgb(225 218 218)",
+                    backgroundColor: "#e6f9ff",
+                    marginTop: "-10px"
+                  }}
+                >
+                  <option value="">قم بتحديد قنوات عرض المتجر</option>
+                  <option value="enabled">اظهار في موقع المتجر</option>
+                  <option value="rules">اظهار في تطبيق المتجر</option>
+                </select>
+              </div>
+              <form className="" style={{ marginRight: "43px", marginTop: "15px" }}>
+                <div style={{ textAlign: "right" }}>
+                  <label><input type="checkbox" name="ارفاق ملف عند الطلب" style={{ marginLeft: "10p" }} />ارفاق ملف عند الطلب </label>
+                </div>
+                <div style={{ textAlign: "right" }}>
+                  <label><input type="checkbox" name="امكانية كتابة الملاحظة" style={{ marginLeft: "10p" }} />امكانبة كتابة الملاحظة </label>
+                </div>
+                <div style={{ textAlign: "right" }}><label><input type="checkbox" name="المنتج خاضع لضريبة" style={{ marginLeft: "10p" }} />المنتج خاضع لضريبة </label>
+                </div>
+              </form>
+              <div className="form-group" style={{ marginRight: "43px" }}>
+                <ReactQuill
+                  value={description}
+                  onChange={setDescription}
+                  placeholder="وصف المنتج"
+                  style={{
+                    width: "calc(98% - 50px)",
+                    border: "1px solid rgb(225 218 218)",
+                    marginTop: "10px",
+                    textAlign: "right",
+                  }}
+                  className="ql-container"
+                />
+              </div>
+
+              <style jsx>{`
+                .ql-editor {
+                  direction: rtl;
+                  text-align: right;
+                }
+                .ql-placeholder {
+                  text-align: right; 
+                  padding:10px;
+                }
+              `}</style>
+
+              <label className="form-productDetails-label-class" style={{ marginRight: "41px", marginTop: "15px" }}>
+                ادخل الوسوم هنا
+              </label>
+              <div className="input-container" style={{ width: "90%", marginRight: "40px", marginTop: "-2px" }}>
+                <input
+                  type="text"
+                  className="text-input"
+                  placeholder=" ادخل الوسيم هنا ,ثم اضغط زر اضافة او اضغط Enter"
+                />
+                <button className="input-button">
+                  <i className="icon-class">اضافة</i>
+                </button>
+              </div>
+
+              <label className="form-productDetails-label-class" style={{ marginRight: "41px", marginTop: "15px" }}>
+                لا توجد رسوم لهذا المنتج
+              </label>
+              <div style={{ margin: "20px", backgroundColor: "rgb(235 232 232 / 59%)", padding: "10px", borderRadius: "10px" }}>
+                <label className="form-productDetails-label-class" style={{ marginRight: "43px", marginTop: "15px", color: "black" }}>
+                  تحسينات SEO
+                </label>
+                <br />
+                <label className="form-productDetails-label-class" style={{ marginRight: "43px", marginTop: "15px", color: "black" }}>
+                  عنوان صفحة المنتج (Page Title)
+                </label>
+                <div style={{ marginRight: "41px", marginTop: "15px" }}>
+                  <input type="text" placeholder="عنوان صفحة المنتج" style={{ width: "90%", border: "1px solid rgb(225 218 218)", padding: "5px" }} />
+                  <p style={{ marginRight: "40px" }}>
+                    اسم المنتج :
+                    <span className="spanProductDetailsClass">
+                      Name
+                    </span>
+                    التصنيف :
+                    <span className="spanProductDetailsClass">Category</span>
+                    الماركه :
+                    <span className="spanProductDetailsClass">brand</span>
+                  </p>
+                </div>
+                <label className="form-productDetails-label-class" style={{ marginRight: "43px", marginTop: "15px", color: "black", padding: "5px" }}>
+                  رابط صفحة المنتج (SEO Page URL)
+                </label>
+                <div style={{ marginRight: "41px", marginTop: "15px" }}>
+                  <input type="text" placeholder="رابط صفحة المنتج" style={{ width: "90%", border: "1px solid rgb(225 218 218)", padding: "5px" }} />
+                  <p style={{ marginRight: "40px" }}>
+                    اسم المنتج :
+                    <span className="spanProductDetailsClass">
+                      Name
+                    </span>
+                    التصنيف :
+                    <span className="spanProductDetailsClass">Category</span>
+                    الماركه :
+                    <span className="spanProductDetailsClass">brand</span>
+                  </p>
+                </div>
+                <br />
+                <label className="form-productDetails-label-class" style={{ marginRight: "43px", marginTop: "15px", color: "black" }}>
+                  وصف صفحة المنتج (Page Description)
+                </label>
+                <div style={{ marginRight: "41px", marginTop: "15px" }}>
+                  <textarea placeholder="وصف صفحة المنتج" style={{ width: "90%", height: "100px", border: "1px solid rgb(225 218 218)", padding: "5px", outline: "none" }} />
+                  <p style={{ marginRight: "20px" }}>
+                    اسم المنتج :
+                    <span className="spanProductDetailsClass">
+                      Name
+                    </span>
+                    التصنيف :
+                    <span className="spanProductDetailsClass">Category</span>
+                    الماركه :
+                    <span className="spanProductDetailsClass">brand</span>
+                  </p>
+                </div>
+                <br />
+                <label className="form-productDetails-label-class" style={{ marginRight: "43px", marginTop: "15px", color: "black" }}>
+                  netflix
+                </label>
+                <div style={{ marginRight: "41px", marginTop: "15px" }}>
+                  <a href="https://salla.sa/giftshop2024/netflix/p1744624860" style={{ color: "green", textDecoration: "none" }}>https://salla.sa/giftshop2024/netflix/p1744624860</a>
+                </div>
+              </div>
+
             </div>
           )}
           {showFilesSection && (
