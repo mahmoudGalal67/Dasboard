@@ -1,13 +1,14 @@
 import React from 'react';
-// import Navbar from '../../components/navbar/Navbar'
+import HeaderComponent from './component/HeaderComponent';
+import RequestHead from './component/RequestHead';
 
 const RequestsPage = (props) => {
   return (
     <>
-     {/* <DarkModeContextProvider> */}
-    {/* <Navbar/> */}
-    <div>RequestsPage</div>
-    {/* </DarkModeContextProvider> */}
+
+      <HeaderComponent />
+      <RequestHead />
+
     </>
   );
 };

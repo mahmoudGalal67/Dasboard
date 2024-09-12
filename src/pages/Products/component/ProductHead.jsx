@@ -20,7 +20,7 @@ import {
   FaCalendarAlt,
 } from "react-icons/fa";
 
-const ProductHead = () => {
+const ProductHead = ({ showProductList, hideProductList }) => {
   const [showModal, setShowModal] = useState(false);
 
   const handleShowModal = () => setShowModal(true);
@@ -223,10 +223,10 @@ const ProductHead = () => {
         <Button className="btn-services" onClick={handleShowServiceModal}>
           <FaTools className="icon" /> خدمات
         </Button>
-        <Button className="btn-grid">
+        <Button className="btn-grid" onClick={showProductList}>
           <FaTh className="icon" />
         </Button>
-        <Button className="btn-list">
+        <Button className="btn-list" onClick={hideProductList}>
           <FaList className="icon" />
         </Button>
       </div>
@@ -488,7 +488,7 @@ const ProductHead = () => {
               <p>تصنيفات المنتجات</p>
             </div>
             <div className="icon-container-drop">
-            <FaBoxOpen />
+              <FaBoxOpen />
             </div>
           </div>
           <div className="dropdown-item-service">
@@ -547,9 +547,9 @@ const ProductHead = () => {
               <FaCalendarAlt />
             </div>
           </div>
-          <div className="dropdown-item-service"  
-           onMouseEnter={handleMouseEnter} 
-           onMouseLeave={handleMouseLeave}>
+          <div className="dropdown-item-service"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}>
             <div className="text-container-service">
               <p>استيراد المنتجات</p>
             </div>
@@ -557,17 +557,17 @@ const ProductHead = () => {
               <FaThLarge />
             </div>
             {showImportDropdown && (
-            <div className="dropdown-content">
-              <p>استيراد المنتجات</p>
-              <p>استيراد كميات المنتجات</p>
-              <p>استيراد أسعار المنتجات</p>
-              <p>استيراد بيانات SEO</p>
-            </div>
-          )}
+              <div className="dropdown-content">
+                <p>استيراد المنتجات</p>
+                <p>استيراد كميات المنتجات</p>
+                <p>استيراد أسعار المنتجات</p>
+                <p>استيراد بيانات SEO</p>
+              </div>
+            )}
           </div>
-          <div className="dropdown-item-service" 
-           onMouseEnter={handleMouseEnter2} 
-           onMouseLeave={handleMouseLeave2}>
+          <div className="dropdown-item-service"
+            onMouseEnter={handleMouseEnter2}
+            onMouseLeave={handleMouseLeave2}>
             <div className="text-container-service">
               <p>تصدير المنتجات</p>
             </div>
@@ -575,14 +575,14 @@ const ProductHead = () => {
               <FaThLarge />
             </div>
             {showExportDropdown && (
-            <div className="dropdown-export-content">
-              <p>اضافة قالب تصدير</p>
-              <p>تصدير المنتجات</p>
-              <p>تصدير كميات المنتجات</p>
-              <p>تصدير أسعار المنتجات</p>
-              <p>تصدير بيانات SEO</p>
-            </div>
-          )}
+              <div className="dropdown-export-content">
+                <p>اضافة قالب تصدير</p>
+                <p>تصدير المنتجات</p>
+                <p>تصدير كميات المنتجات</p>
+                <p>تصدير أسعار المنتجات</p>
+                <p>تصدير بيانات SEO</p>
+              </div>
+            )}
           </div>
           <div className="dropdown-item-service">
             <div className="text-container-service">

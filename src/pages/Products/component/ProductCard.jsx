@@ -191,6 +191,18 @@ const ProductCard = ({ imageUrl, price }) => {
 
   const [showTotal, setShowTotal] = useState(false);
 
+  const [expandedItem, setExpandedItem] = useState(null);
+  const handleItemToggle = (item) => {
+    setExpandedItem(prev => (prev === item ? null : item));
+  };
+
+  const [quantity, setQuantity] = useState(9);
+
+  const handleQuantityChange = (change) => {
+    setQuantity((prevQuantity) => Math.max(prevQuantity + change, 1));
+  };
+
+
   return (
     <div className="product-card">
       <div className="product-image">
@@ -294,6 +306,8 @@ const ProductCard = ({ imageUrl, price }) => {
         </div>
         <button className="save-button">حفظ</button>
       </div>
+
+      
       <Modal
         show={showModal}
         onHide={handleModalClose}
@@ -569,7 +583,7 @@ const ProductCard = ({ imageUrl, price }) => {
                         type="checkbox"
                         checked={unlimited}
                         onChange={() => setUnlimited(!unlimited)}
-                        onClick={()=> setShowTotal(true)}
+                        onClick={() => setShowTotal(true)}
                       />
                     </Col>
                     <Col>
@@ -580,21 +594,78 @@ const ProductCard = ({ imageUrl, price }) => {
                     <Col>
                       <Form.Label className="mb-0">
                         {showTotal && (
-                          <p style={{position:"absolute",left:"40px",top:"510px"}}>إجمالي الكمية 26</p>
+                          <p style={{ position: "absolute", left: "40px", top: "510px" }}>إجمالي الكمية 26</p>
                         )}
                       </Form.Label>
                     </Col>
                   </Row>
                 </Form.Group>
                 {quantities.map((item, index) => (
-                  <div key={index} className="d-flex justify-content-between mb-2">
-                    <div className="flex-grow-1 bg-light p-2 rounded">
-                      <span style={{ fontSize: "10px", border: "1px solid #aaa", padding: "3px", borderRadius: "4px", marginLeft: "5px" }}> +  </span>
-                      {item.color}
+                  <div key={index}>
+                    <div className="d-flex justify-content-between mb-2" onClick={() => handleItemToggle(item)} style={{ cursor: "pointer" }}>
+                      <div className="flex-grow-1 bg-light p-2 rounded">
+                        <span style={{ fontSize: "10px", border: "1px solid #aaa", padding: "3px", borderRadius: "4px", marginLeft: "5px" }}> + </span>
+                        {item.color}
+                      </div>
+                      <div className="ms-2 bg-light p-2 rounded text-end" style={{ minWidth: '120px' }}>
+                        متوفر عدد {item.available}
+                      </div>
                     </div>
-                    <div className="ms-2 bg-light p-2 rounded text-end" style={{ minWidth: '120px' }}>
-                      متوفر عدد {item.available}
-                    </div>
+                    {expandedItem === item && (
+                      <div className="additional-content p-3 rounded mt-2">
+                        <div className="product-form">
+                          <div className="row">
+
+                            <div className="col" style={{ backgroundColor: "white", borderRadius: "5px" }}>
+                              <input type="text" placeholder="السعر" style={{ outline: "none", border: "none", backgroundColor: "none" }} />
+                              <label className="p-2 text-start" style={{ borderRight: "1px solid #aaa" }} >ر.س</label>
+                            </div>
+                          </div>
+                          <div className="row" style={{ marginTop: "20px" }}>
+                            <div className="col">
+                              <div className="col" style={{ backgroundColor: "white", borderRadius: "5px" }}>
+                                <input type="text" placeholder="سعر التكلفة" style={{ outline: "none", border: "none", backgroundColor: "none" }} />
+                                <label className="p-2 text-start" style={{ borderRight: "1px solid #aaa" }} >ر.س</label>
+                              </div>
+                            </div>
+                            <div className="col">
+                              <div className="col" style={{ backgroundColor: "white", borderRadius: "5px" }}>
+                                <input type="text" placeholder="السعر المنخفض" style={{ outline: "none", border: "none", backgroundColor: "none" }} />
+                                <label className="p-2 text-start" style={{ borderRight: "1px solid #aaa" }} >ر.س</label>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="row mt-3" style={{ marginTop: "20px" }}>
+                            <div className="col">
+                              <div className="col" style={{ backgroundColor: "white", borderRadius: "5px" }}>
+                                <input type="text" placeholder="الوزن" style={{ outline: "none", border: "none", backgroundColor: "none" }} />
+                              </div>
+                            </div>
+                            <div className="col">
+                              <input type="text" className="form-control" placeholder="باركود" />
+                            </div>
+                            <div className="col">
+                              <input type="text" className="form-control" placeholder="SKU" />
+                            </div>
+                            <div className="col">
+                              <input type="text" className="form-control" placeholder="اقل كمية للتنبية" />
+                            </div>
+                          </div>
+
+                          <label style={{ marginTop: "20px", marginBottom: "-20px" }}>الكمية</label>
+                          <div className="quantity-section mt-2">
+                            <div>
+                              <label>كمية المنتج</label>
+                            </div>
+                            <div className="quantity-control">
+                              <button className="btn btn-light" onClick={() => handleQuantityChange(-1)}>-</button>
+                              <span>{quantity}</span>
+                              <button className="btn btn-light" onClick={() => handleQuantityChange(1)}>+</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 ))}
               </Form>
