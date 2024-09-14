@@ -1,0 +1,69 @@
+.swiper-item {
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+    background-color: #e8f1f129; 
+    margin: 0 10px; 
+    width: 150px !important;
+    position:relative;
+    border:1px solid #dddddd;
+  }
+  
+  .swiper-item:hover {
+    transform: scale(1.05);
+    cursor:pointer;
+  }
+  
+  .icon-Class{
+    font-size: 7px;
+    margin-bottom: 10px;
+    position:absolute;
+    top:5px;
+    right:10px;
+  }
+  .flexContenetClass{
+    display:flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  .swiper-item.selected {
+    background-color: #007BFF; 
+  }
+  h3 {
+    font-size: 16px;
+    margin: 0;
+    margin-bottom: 5px;
+  }
+  
+  span {
+    font-size: 14px;
+    color: #666; 
+  }
+  
+  .slider-wrapper {
+    padding: 20px 0; 
+  }
+  .icons-class-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    margin-bottom: 10px;
+  }
+  
+  .fa-times-icon {
+    background-color: red;
+    width: 20px; 
+    height: 20px;
+    border-radius: 50%; 
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 100px;
+  }
+  
+  .icons-item-class {
+    color: inherit;
+  }
+  

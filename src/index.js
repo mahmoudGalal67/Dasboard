@@ -6,6 +6,8 @@ import App from './App';
 import { store } from './redux/store';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from './components/navbar/ThemeContext';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') // Remove TypeScript-specific syntax

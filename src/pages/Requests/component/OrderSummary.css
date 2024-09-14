@@ -1,0 +1,117 @@
+.order-summary {
+    background-color: #f9f9f9; 
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 25px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .header-title {
+    display: flex;
+    align-items: center; 
+  }
+  
+  .header-checkbox {
+    width: 18px; 
+    height: 18px; 
+    border: 1px solid #b0b0b0;
+    border-radius: 3px; 
+    margin:0 10px;
+    cursor: pointer;
+  }
+  
+  .header h2 {
+    margin: 0; 
+    font-weight: 400; 
+    color: #333;
+  }
+  
+  .edit-button {
+    color:  #41474e;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid #6d91bb;
+  }
+  
+  .order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .order-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .order-status {
+    color: #f44336; 
+  }
+  
+  .order-date {
+    color: #888; 
+  }
+  
+  .actions {
+    display: flex;
+    align-items: center;
+  }
+  .order-item-left{
+    display:flex;
+    justify-content: space-between;
+  }
+  .order-item-left .order-item-left-1{
+    margin-left:15px;
+  }
+  .order-item-left .order-item-left-2{
+  color:rgb(180, 175, 175);
+  }  
+  .order-item-right{
+    display:flex;
+  }
+  .header-title {
+    display: flex;
+    align-items: center;
+  }
+  
+  .order-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e0f7fa; 
+    color: #00796b; 
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin-left: 10px; 
+  }
+  
+  .order-details {
+    font-weight: bold;
+    margin-right: 5px; 
+  }
+  
+  .close-icon {
+      background-color: red;
+      width: 15px; 
+      height:15px;
+      border-radius: 50%; 
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 100px;
+  }
