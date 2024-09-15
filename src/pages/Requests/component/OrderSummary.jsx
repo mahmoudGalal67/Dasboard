@@ -31,7 +31,7 @@ const OrderSummary = ({ selectedIndex, showDetails }) => {
           ) : null}
         </div>
         <button className="edit-button">
-          <FontAwesomeIcon icon={faEdit} /> تحرير سريع
+          <i className="sicon-magic-wand flip-x" ></i> تحرير سريع
         </button>
       </div>
       <div className="order-item">

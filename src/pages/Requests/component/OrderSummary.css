@@ -95,8 +95,9 @@
     background-color: #e0f7fa; 
     color: #00796b; 
     border-radius: 20px;
-    padding: 5px 10px;
+    padding: 4px 10px;
     margin-left: 10px; 
+    height: 45px;
   }
   
   .order-details {

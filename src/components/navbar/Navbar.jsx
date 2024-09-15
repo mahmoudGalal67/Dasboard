@@ -45,7 +45,7 @@ const Navbar = () => {
           />
 
           <div className="navbar-icon">
-            <i className="far fa-clock"></i>
+            <i className="multi-order-search-tooltip sicon-info"></i>
           </div>
           <li className="nav-item dropdown">
             <a
@@ -145,17 +145,16 @@ const Navbar = () => {
             }`}
           >
             <div className="CopyClass">
-              <FaCopy
-                size={24}
-                className="navbar-copy-icon"
+              <i
+                className="sicon-swap-stroke navbar-copy-icon"
                 onClick={handleCopy}
-              />
+              ></i>
             </div>
             <div>
               <h2 className="navbar-code">S4PY3LB7</h2>
             </div>
             <div>
-              <FaRegMoneyBillAlt size={24} className="navbar-icon-discount" />
+              <i className="sicon-discount-coupon navbar-icon-discount" ></i>
             </div>
           </div>
           <div className="navbar-socialIcons">
@@ -176,7 +175,7 @@ const Navbar = () => {
             </a>
           </div>
         </Modal.Body>
-        <Modal.Footer>
+        <Modal.Footer style={{backgroundColor:"#f2f5f7"}}> 
           <Button
             variant="secondary"
             onClick={handleModalClose}

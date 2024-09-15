@@ -1,11 +1,17 @@
 .orders-section {
-  padding: 25px;
   background-color: #fff;
   border: 1px solid #dee2e6;
+  border-radius: 10px;
+}
+.orders-header{
+  background-color:#eee;
+  padding: 15px;
+
 }
 
 .order-details {
   margin-top: 10px;
+  padding: 15px;
 
 }
 @media (min-width: 1800px) {

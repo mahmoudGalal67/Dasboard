@@ -22,8 +22,8 @@ const HeaderComponent = () => {
           <span className="nav-item">/ المنتجات</span>
         </div>
         <Button className="help-dropdown" onClick={handleShow}>
-          <i className="fa-solid fa-sun mx-1"></i>المساعدة
-          <i className="mx-2" style={{color:"blue"}}>{showModal ? "▲" : "▼"}</i>
+          <i className="sicon-life-ring mx-1"></i>المساعدة
+          <i className="mx-2" style={{color:"blue"}}>{showModal ? <i className="sicon-keyboard_arrow_down"></i> : <i className="sicon-keyboard_arrow_up"></i>}</i>
         </Button>
       </div>
 

@@ -47,7 +47,7 @@ const appRoutes = [
     state: "products",
     sidebarProps: {
       displayText: "المنتجات",
-      icon: <ShoppingCartOutlinedIcon />
+      icon: <i className="sicon-t-shirt"></i>
     }
   },
   {
@@ -56,7 +56,7 @@ const appRoutes = [
     state: "requests",
     sidebarProps: {
       displayText: "الطلبات",
-      icon: <ReceiptLongOutlinedIcon />
+      icon: <i className="sicon-box"></i>
     }
   },
   {
@@ -65,7 +65,7 @@ const appRoutes = [
     state: "clients",
     sidebarProps: {
       displayText: "العملاء",
-      icon: <PeopleOutlinedIcon />
+      icon: <i className="sicon-users"></i>
     }
   },
   {
@@ -74,7 +74,7 @@ const appRoutes = [
     state: "reports",
     sidebarProps: {
       displayText: "التقارير",
-      icon: <BarChartOutlinedIcon />
+      icon: <i className="sicon-chart-pie"></i>
     }
   },
   {
@@ -83,7 +83,7 @@ const appRoutes = [
     state: "questionsandreviews",
     sidebarProps: {
       displayText: "الأسئلة والتقييمات",
-      icon: <QuestionAnswerOutlinedIcon />
+      icon: <i className="sicon-chat-conversation-alt"></i>
     }
   },
   {
@@ -92,7 +92,7 @@ const appRoutes = [
     state: "profilepages",
     sidebarProps: {
       displayText: "الصفحات التعريفية",
-      icon: <AccountCircleOutlinedIcon />
+      icon: <i className="sicon-newspaper"></i>
     }
   },
   {
@@ -101,7 +101,84 @@ const appRoutes = [
     state: "marketingtools",
     sidebarProps: {
       displayText: "الإدوات التسويقية",
-      icon: <CampaignOutlinedIcon />
+      icon: <i className="sicon-megaphone"></i>
+    }
+  },
+  {
+    path: "#",
+    sidebarProps: {
+      displayText: (
+         <div  className="sidebar-item-hover" >
+           <span style={{ color: "#5252ef",fontSize:"17px"}}>
+             قنوات البيع  
+          </span>
+        </div>
+      
+      ),
+    }
+  },
+   
+  {
+    path: "/StorePackage",
+    element: <StorePackagePage />,
+    state: "StorePackage",
+    sidebarProps: {
+      displayText: "محلي",
+      icon:<i className="sicon-mahally"></i>
+    }
+  },  {
+    path: "/StorePackage",
+    element: <StorePackagePage />,
+    state: "StorePackage",
+    sidebarProps: {
+      displayText: "سلة بوينت",
+      icon:<i className="sicon-pos"></i>
+    }
+  }, 
+  {
+    path: "#",
+    sidebarProps: {
+      displayText: (
+        <span style={{ color: "#5252ef",fontSize:"17px"}}>
+          ادوات المساندة
+        </span>
+      ),
+      
+    }
+  },
+  {
+    path: "/StorePackage",
+    element: <StorePackagePage />,
+    state: "StorePackage",
+    sidebarProps: {
+      displayText: "خدمات التاجر",
+      icon:<i className="sicon-briefcase"></i>
+    }
+  },  {
+    path: "/StorePackage",
+    element: <StorePackagePage />,
+    state: "StorePackage",
+    sidebarProps: {
+      displayText: "المؤثران",
+      icon:<i className="sicon-user-list"></i>
+    }
+  },  {
+    path: "/StorePackage",
+    element: <StorePackagePage />,
+    state: "StorePackage",
+    sidebarProps: {
+      displayText: "اعلانات سويبلي",
+      icon:<i className="sicon-megaphone"></i>
+    }
+  },
+  {
+    path: "#",
+    sidebarProps: {
+      displayText:(
+        <span style={{ color: "#5252ef",fontSize:"17px"}}>
+        الاعدادات
+      </span>
+      ),
     }
   },
   {
@@ -110,7 +187,7 @@ const appRoutes = [
     state: "StorePackage",
     sidebarProps: {
       displayText: "باقة المتجر",
-      icon: <StoreIcon style={{ fontSize: '24px'}} /> 
+      icon:<i className="sicon-store"></i>
     }
   },
   {
@@ -119,7 +196,7 @@ const appRoutes = [
     state: "StoreSettings",
     sidebarProps: {
       displayText: "اعدادات المتجر",
-      icon: <SettingsIcon style={{ fontSize: '24px'}} />  
+      icon:<i className="sicon-settings"></i>
     }
   },
   {
@@ -128,7 +205,18 @@ const appRoutes = [
     state: "WalletAndBills",
     sidebarProps: {
       displayText: "المحفظة والفواتير",
-      icon: <AccountBalanceWalletIcon style={{ fontSize: '24px'}} /> 
+      icon: <i className="sicon-wallet"></i>
+    }
+  },
+  {
+    path: "#",
+    sidebarProps: {
+      displayText: (
+        <span style={{ color: "#5252ef",fontSize:"17px"}}>
+            مظهر المتجر
+      </span>
+      ),
+      icon:null,
     }
   },
   {
@@ -137,7 +225,7 @@ const appRoutes = [
     state: "StoreDesign",
     sidebarProps: {
       displayText: "تصميم المتجر",
-      icon: <DesignServicesIcon style={{ fontSize: '24px'}} /> 
+      icon: <i className="sicon-window-layout"></i>
     }
   },
   {
@@ -146,7 +234,18 @@ const appRoutes = [
     state: "StoreMaker",
     sidebarProps: {
       displayText: "صانع المتجر",
-      icon: <BuildIcon style={{ fontSize: '24px' }} /> 
+      icon:<i className="sicon-iphone"></i>
+    }
+  },
+  {
+    path: "#",
+    sidebarProps: {
+      displayText: (
+        <span style={{  color: "#5252ef",fontSize:"17px"}}>
+        متجر التطبيقات
+      </span>
+      ),
+      icon:null,
     }
   },
   {
@@ -155,7 +254,7 @@ const appRoutes = [
     state: "InstalledApplications",
     sidebarProps: {
       displayText: "التطبيقات المثبتة",
-      icon: <AppsIcon style={{ fontSize: '24px'}} />
+      icon: <i className="sicon-puzzle"></i>
     }
   },
   {
@@ -164,7 +263,7 @@ const appRoutes = [
     state: "VisittheAppStore",
     sidebarProps: {
       displayText: "زيارة متجر التطبيقات",
-      icon: <ShoppingCartIcon style={{ fontSize: '24px' }} />
+      icon: <i className="sicon-layout-grid-rearrange"></i>
     }
   }
 ];

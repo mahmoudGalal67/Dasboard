@@ -6,6 +6,7 @@ import appRoutes from "./appRoutes";
 
 const generateRoute = (routes) => {
   return routes.map((route, index) => (
+    
     route.index ? (
       <Route
         index

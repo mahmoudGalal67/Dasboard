@@ -9,14 +9,68 @@ import {
     FaClipboardCheck,
 } from "react-icons/fa";
 import './RequestHead.css';
-import { Modal,Form } from "react-bootstrap";
+import { Modal, Form } from "react-bootstrap";
 import Accordion from "react-bootstrap/Accordion";
 
 const RequestHead = () => {
     const [showFilterModal, setShowFilterModal] = useState(false);
     const handleShowFilterModal = () => setShowFilterModal(true);
     const handleCloseFilterModal = () => setShowFilterModal(false);
-    
+
+    const requestStatuses = [
+        "الكل",
+        "مسودة",
+        "محذوف",
+        "بانتظار الدفع",
+        "بانتظار المراجعة",
+        "قيد التنفيذ",
+        "تم التنفيذ",
+        "جاري التوصيل",
+        "تم التوصيل",
+        "تم الشحن",
+        "ملغي",
+        "مسترجع",
+        "قيد الاسترجاع",
+        "طلب عرض السعر",
+    ];
+    const [checkedItems, setCheckedItems] = useState({});
+    const handleCheckboxChange = (event) => {
+        const { name, checked } = event.target;
+        setCheckedItems((prev) => ({
+            ...prev,
+            [name]: checked,
+        }));
+    };
+    const shippingCompany = [
+        "الكل",
+        "مندوب مكة",
+        "ارامكس",
+        "سمسا",
+        "DHL Express",
+        "البريد السعودي | شبل",
+        "اي مكان",
+        "برق",
+        "كريم",
+        "ريدبوكس",
+        "أفق السرعة",
+    ];
+    const requestType = [
+        "الكل",
+        "طلب مباشر",
+        "تبرع سريع",
+    ];
+    const paymentMethod = [
+        "الكل",
+        "الدفع عند الاستلام",
+        "البطاقة الإتمانية",
+        "مدى",
+        "قوقل باي",
+        "تمارا",
+        "تابي",
+        "ام اي اس باي",
+        "كي نت",
+    ];
+
     return (
         <div>
             <div className="header-container">
@@ -30,14 +84,14 @@ const RequestHead = () => {
                 </div>
                 <div className="header-left">
                     <Button className="btn-filter" >
-                        <FaClipboardCheck className="icon" />
+                        <i className="sicon-calendar-date icon-calender"></i>
                         الحجوزات
                     </Button>
                     <Button className="btn-services" onClick={handleShowFilterModal}>
-                        <FaFilter className="icon" />  تصفية
+                        <i className="sicon-filter icon-filter"></i>  تصفية
                     </Button>
                     <Button className="btn-services">
-                        <FaTools className="icon" /> خدمات
+                        <i className="sicon-toolbox icon-toolbox"></i> خدمات
                     </Button>
                 </div>
             </div>
@@ -78,42 +132,100 @@ const RequestHead = () => {
                             <Accordion.Item eventKey="" style={{ border: "none" }}>
                                 <Accordion.Header>
                                     <div style={{ flexGrow: 1, textAlign: "right" }}>
-                                   حالة الطلب
+                                        حالة الطلب
                                     </div>
                                 </Accordion.Header>
                                 <Accordion.Body>
-                                
+                                    <Form>
+                                        {requestStatuses.map((type, index) => (
+                                            <div key={index} style={{ textAlign: "right" }}>
+                                                <label>
+                                                    <input
+                                                        type="checkbox"
+                                                        name={type}
+                                                        checked={!!checkedItems[type]}
+                                                        onChange={handleCheckboxChange}
+                                                        style={{ marginLeft: "10px" }}
+                                                    />
+                                                    {type}
+                                                </label>
+                                            </div>
+                                        ))}
+                                    </Form>
                                 </Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey="1" style={{ border: "none" }}>
                                 <Accordion.Header>
                                     <div style={{ flexGrow: 1, textAlign: "right" }}>
-                                شركة الشحن
+                                        شركة الشحن
                                     </div>
                                 </Accordion.Header>
                                 <Accordion.Body>
-                            
+                                    {shippingCompany.map((type, index) => (
+                                        <div key={index} style={{ textAlign: "right" }}>
+                                            <label>
+                                                <input
+                                                    type="checkbox"
+                                                    name={type}
+                                                    checked={!!checkedItems[type]}
+                                                    onChange={handleCheckboxChange}
+                                                    style={{ marginLeft: "10px" }}
+                                                />
+                                                {type}
+                                            </label>
+                                        </div>
+                                    ))}
                                 </Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey="2" style={{ border: "none" }}>
                                 <Accordion.Header>
                                     <div style={{ flexGrow: 1, textAlign: "right" }}>
                                         {" "}
-                                        لم يتم قرائتها
+                                        نوع الطلب
                                     </div>
                                 </Accordion.Header>
                                 <Accordion.Body>
-                             
+                                    <Form>
+                                        {requestType.map((type, index) => (
+                                            <div key={index} style={{ textAlign: "right" }}>
+                                                <label>
+                                                    <input
+                                                        type="checkbox"
+                                                        name={type}
+                                                        checked={!!checkedItems[type]}
+                                                        onChange={handleCheckboxChange}
+                                                        style={{ marginLeft: "10px" }}
+                                                    />
+                                                    {type}
+                                                </label>
+                                            </div>
+                                        ))}
+                                    </Form>
                                 </Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey="3" style={{ border: "none" }}>
                                 <Accordion.Header>
                                     <div style={{ flexGrow: 1, textAlign: "right" }}>
-                                       طريقة الدفع
+                                        طريقة الدفع
                                     </div>
                                 </Accordion.Header>
                                 <Accordion.Body>
-                                
+                                    <Form>
+                                        {paymentMethod.map((type, index) => (
+                                            <div key={index} style={{ textAlign: "right" }}>
+                                                <label>
+                                                    <input
+                                                        type="checkbox"
+                                                        name={type}
+                                                        checked={!!checkedItems[type]}
+                                                        onChange={handleCheckboxChange}
+                                                        style={{ marginLeft: "10px" }}
+                                                    />
+                                                    {type}
+                                                </label>
+                                            </div>
+                                        ))}
+                                    </Form>
                                 </Accordion.Body>
                             </Accordion.Item>{" "}
                             <Accordion.Item eventKey="4" style={{ border: "none" }}>
@@ -123,79 +235,79 @@ const RequestHead = () => {
                                     </div>
                                 </Accordion.Header>
                                 <Accordion.Body>
-                               
+
                                 </Accordion.Body>
                             </Accordion.Item>{" "}
                             <Accordion.Item eventKey="5" style={{ border: "none" }}>
                                 <Accordion.Header>
                                     <div style={{ flexGrow: 1, textAlign: "right" }}>
-                                           الفرع
+                                        الفرع
                                     </div>
                                 </Accordion.Header>
                                 <Accordion.Body>
-                                
+
                                 </Accordion.Body>
                             </Accordion.Item>{" "}
                             <Accordion.Item eventKey="6" style={{ border: "none" }}>
                                 <Accordion.Header>
                                     <div style={{ flexGrow: 1, textAlign: "right" }}>
-                                     ترتيب الطلبات
+                                        ترتيب الطلبات
                                     </div>
                                 </Accordion.Header>
                                 <Accordion.Body>
-                                
+
                                 </Accordion.Body>
                             </Accordion.Item>{" "}
                             <Accordion.Item eventKey="7" style={{ border: "none" }}>
                                 <Accordion.Header>
                                     <div style={{ flexGrow: 1, textAlign: "right" }}>
-                                       طلبات الموظف
+                                        طلبات الموظف
                                     </div>
                                 </Accordion.Header>
                                 <Accordion.Body>
-                               
+
                                 </Accordion.Body>
                             </Accordion.Item>{" "}
 
                             <Accordion.Item eventKey="8" style={{ border: "none" }}>
                                 <Accordion.Header>
                                     <div style={{ flexGrow: 1, textAlign: "right" }}>
-                                       قنوات البيع
+                                        قنوات البيع
                                     </div>
                                 </Accordion.Header>
                                 <Accordion.Body>
-                               
+
                                 </Accordion.Body>
                             </Accordion.Item>{" "}
                             <Accordion.Item eventKey="9" style={{ border: "none" }}>
                                 <Accordion.Header>
                                     <div style={{ flexGrow: 1, textAlign: "right" }}>
-                                       تاريخ الطلب
+                                        تاريخ الطلب
                                     </div>
                                 </Accordion.Header>
                                 <Accordion.Body>
-                            
+
                                 </Accordion.Body>
                             </Accordion.Item>{" "}
                             <Accordion.Item eventKey="10" style={{ border: "none" }}>
                                 <Accordion.Header>
                                     <div style={{ flexGrow: 1, textAlign: "right" }}>
-                                      الوسوم
+                                        الوسوم
                                     </div>
                                 </Accordion.Header>
                                 <Accordion.Body>
-                                
+
                                 </Accordion.Body>
                             </Accordion.Item>{" "}
 
                             <Accordion.Item eventKey="11" style={{ border: "none" }}>
                                 <Accordion.Header>
                                     <div style={{ flexGrow: 1, textAlign: "right" }}>
-                                       المنتجات
+                                        المنتجات
                                     </div>
                                 </Accordion.Header>
                                 <Accordion.Body>
-                         
+
                                 </Accordion.Body>
                             </Accordion.Item>{" "}
                         </Accordion>
@@ -236,7 +348,7 @@ const RequestHead = () => {
                             width: "250px",
                             marginTop: "10px",
                         }}
-                       
+
                     >
                         تصدير النتائج <span className="icon-export" />
                     </Button>

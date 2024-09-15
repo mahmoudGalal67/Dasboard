@@ -20,12 +20,19 @@ h5 {
 .notifications ul ,.missed-products ul{
   list-style-type: none;
   padding: 0;
-  height:300px;
   overflow-y:scroll;
   margin-bottom:20px;
   
 }
 
+.notifications ul{
+  height:300px;
+
+}
+.missed-products ul{
+  height:150px;
+
+}
 .notifications li ,.missed-products li{
   padding: 5px 0;
   border-bottom: 1px solid #dee2e6;

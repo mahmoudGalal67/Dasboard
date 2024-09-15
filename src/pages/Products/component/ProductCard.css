@@ -306,6 +306,9 @@
   width: 15vw;
   border: none;
   border-left: 1px solid #aaa;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
 .field .quantityAndChoies {

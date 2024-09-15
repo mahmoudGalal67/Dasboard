@@ -129,7 +129,7 @@ const ProductHead = ({ showProductList, hideProductList }) => {
             <FaPlus className="icon-plus" />
           </span>
           إضافة منتج جديد
-          <span className="caret-icon me-2">{showModal ? "▲" : "▼"}</span>
+          <span className="caret-icon me-2">{showModal ? <i className="sicon-keyboard_arrow_down"></i> : <i className="sicon-keyboard_arrow_up"></i>}</span>
         </Button>
         <Modal
           show={showModal}
@@ -143,7 +143,7 @@ const ProductHead = ({ showProductList, hideProductList }) => {
                 <p>المنتجات الملموسة والقابلة للشحن</p>
               </div>
               <div className="icon-container-drop">
-                <FaBoxOpen />
+                <i className="sicon-packed-box"></i>
               </div>
             </div>
             <div className="dropdown-item">
@@ -152,7 +152,7 @@ const ProductHead = ({ showProductList, hideProductList }) => {
                 <p>التصميم، الطباعة، البحوث، الكتابة</p>
               </div>
               <div className="icon-container-drop">
-                <FaCog />
+                <i className="sicon-fabric-swatch"></i>
               </div>
             </div>
             <div className="dropdown-item">
@@ -161,7 +161,7 @@ const ProductHead = ({ showProductList, hideProductList }) => {
                 <p>المأكولات والمشروبات التي تطلبها حسب خاص</p>
               </div>
               <div className="icon-container-drop">
-                <FaPizzaSlice />
+                <i className="sicon-cake"></i>
               </div>
             </div>
             <div className="dropdown-item">
@@ -170,7 +170,7 @@ const ProductHead = ({ showProductList, hideProductList }) => {
                 <p>الكتب الإلكترونية، الدورات، ملفات التحميل</p>
               </div>
               <div className="icon-container-drop">
-                <FaBook />
+                <i className="sicon-game-controller-alt"></i>          
               </div>
             </div>
             <div className="dropdown-item">
@@ -179,7 +179,7 @@ const ProductHead = ({ showProductList, hideProductList }) => {
                 <p>بطاقات الإهداء، حسابات للبيع</p>
               </div>
               <div className="icon-container-drop">
-                <FaGift />
+                <i className="sicon-barcode-scan"></i>
               </div>
             </div>
             <div className="dropdown-item">
@@ -188,7 +188,7 @@ const ProductHead = ({ showProductList, hideProductList }) => {
                 <p>أكثر من منتج في منتج واحد</p>
               </div>
               <div className="icon-container-drop">
-                <FaCubes />
+                <i className="sicon-inbox-full"></i>
               </div>
             </div>
 
@@ -198,7 +198,7 @@ const ProductHead = ({ showProductList, hideProductList }) => {
                 <p>دورات، استشارات، خدمات طبية وسياحية</p>
               </div>
               <div className="icon-container-drop">
-                <FaCalendarAlt />
+                <i className="sicon-calendar-date"></i>
               </div>
             </div>
 
@@ -209,7 +209,7 @@ const ProductHead = ({ showProductList, hideProductList }) => {
                 <p>إضافة منتج بسرعة وسهولة</p>
               </div>
               <div className="icon-container-drop">
-                <FaThLarge />
+                <i className="sicon-layout-grid"></i>
               </div>
             </div>
           </Modal.Body>
@@ -218,10 +218,10 @@ const ProductHead = ({ showProductList, hideProductList }) => {
 
       <div className="header-left">
         <Button className="btn-filter" onClick={handleShowFilterModal}>
-          <FaFilter className="icon" /> تصفية
+          <i className="sicon-filter icon-filter"></i> تصفية
         </Button>
         <Button className="btn-services" onClick={handleShowServiceModal}>
-          <FaTools className="icon" /> خدمات
+          <i className="sicon-toolbox icon-services"></i> خدمات
         </Button>
         <Button className="btn-grid" onClick={showProductList}>
           <FaTh className="icon" />
@@ -488,7 +488,7 @@ const ProductHead = ({ showProductList, hideProductList }) => {
               <p>تصنيفات المنتجات</p>
             </div>
             <div className="icon-container-drop">
-              <FaBoxOpen />
+              <i className="sicon-inbox-multi"></i>
             </div>
           </div>
           <div className="dropdown-item-service">
@@ -496,7 +496,7 @@ const ProductHead = ({ showProductList, hideProductList }) => {
               <p>إدارة الفلاتر (تجريبي)</p>
             </div>
             <div className="icon-container-drop">
-              <FaCog />
+              <i className="sicon-filter"></i>
             </div>
           </div>
           <div className="dropdown-item-service">
@@ -504,7 +504,7 @@ const ProductHead = ({ showProductList, hideProductList }) => {
               <p>المعارض التجارية</p>
             </div>
             <div className="icon-container-drop">
-              <FaPizzaSlice />
+              <i className="sicon-award-ribbon"></i>
             </div>
           </div>
           <div className="dropdown-item-service">
@@ -512,7 +512,7 @@ const ProductHead = ({ showProductList, hideProductList }) => {
               <p>ترتيب المنتجات</p>
             </div>
             <div className="icon-container-drop">
-              <FaBook />
+              <i className="sicon-list-reorder"></i>
             </div>
           </div>
           <div className="dropdown-item-service">
@@ -520,7 +520,7 @@ const ProductHead = ({ showProductList, hideProductList }) => {
               <p>تعديل المنتجات</p>
             </div>
             <div className="icon-container-drop">
-              <FaGift />
+              <i className="sicon-edit"></i>
             </div>
           </div>
           <div className="dropdown-item-service">
@@ -528,7 +528,7 @@ const ProductHead = ({ showProductList, hideProductList }) => {
               <p>تعديل الأسعار</p>
             </div>
             <div className="icon-container-drop">
-              <FaCubes />
+              <i className="sicon-edit"></i>
             </div>
           </div>
           <div className="dropdown-item-service">
@@ -536,7 +536,7 @@ const ProductHead = ({ showProductList, hideProductList }) => {
               <p>جرد المنتجات</p>
             </div>
             <div className="icon-container-drop">
-              <FaCubes />
+              <i className="sicon-box-bankers"></i>
             </div>
           </div>
           <div className="dropdown-item-service">
@@ -554,7 +554,7 @@ const ProductHead = ({ showProductList, hideProductList }) => {
               <p>استيراد المنتجات</p>
             </div>
             <div className="icon-container-drop">
-              <FaThLarge />
+              <i className="sicon-cloud-upload"></i>
             </div>
             {showImportDropdown && (
               <div className="dropdown-content">
@@ -572,7 +572,7 @@ const ProductHead = ({ showProductList, hideProductList }) => {
               <p>تصدير المنتجات</p>
             </div>
             <div className="icon-container-drop">
-              <FaThLarge />
+              <i className="sicon-cloud-download"></i>
             </div>
             {showExportDropdown && (
               <div className="dropdown-export-content">
@@ -589,7 +589,7 @@ const ProductHead = ({ showProductList, hideProductList }) => {
               <p>حذف جميع المنتجات</p>
             </div>
             <div className="icon-container-drop">
-              <FaThLarge />
+              <i className="sicon-delete"></i>
             </div>
           </div>
         </Modal.Body>

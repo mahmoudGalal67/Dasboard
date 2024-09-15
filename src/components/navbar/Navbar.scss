@@ -167,7 +167,8 @@
 
 .invite-code-box {
   padding: 20px;
-  border: 1px solid #ddd;
+  background: #fcfcfc;
+  border: 1px dashed #eee;
   border-radius: 5px;
   text-align: center;
   margin-bottom: 15px;
@@ -182,7 +183,7 @@
   }
 
   .CopyClass {
-    border: 2px solid #515551;
+    border: 2px solid rgba(0, 73, 86, .3);
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -194,12 +195,12 @@
 
   .navbar-copy-icon {
     cursor: pointer;
-    color: #b1acac;
+    color: #393b8d;
+    font-size: 20px !important;
   }
 
   .navbar-icon-discount {
-    width: 47px;
-    height: 35px;
+    font-size:30px;
   }
 
 }

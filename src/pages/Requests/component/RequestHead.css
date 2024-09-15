@@ -40,8 +40,11 @@
   color: blue;
 }
 
-.icon {
-  font-size: 10px !important;
+.icon-toolbox,.icon-filter,.icon-calender{
+  font-size: 20px !important;
+}
+.icon-calender{
+ margin: 0 5px;
 }
 
 .btn-add-product:hover {
