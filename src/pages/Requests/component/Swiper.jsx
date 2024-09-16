@@ -53,7 +53,7 @@ const Swiper = ({ onCardClick, selectedIndex }) => {
               <span>{item.count}</span>
             </div>
             <div>
-              <h3>{item.title}</h3>
+              <h3 style={{position:"relative"}}><span className="status-circle"></span>{item.title}</h3>
             </div>
           </div>
         </div>

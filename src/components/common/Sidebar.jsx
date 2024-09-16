@@ -117,7 +117,7 @@ const Sidebar = () => {
               className="mb-2 px-3 font-medium"
               style={{ margin: "auto auto" , textDecoration:"none"}}
             >
-              زياره المتجر
+             زياره المتجر
             </a>
           </div>
           <div onClick={handleClick} className="rounded-1-3xl" style={{cursor:"pointer"}}>
@@ -185,15 +185,16 @@ const Sidebar = () => {
           <div style={{ padding: '10px', backgroundColor: '#fff', borderRadius: '5px', boxShadow: '0 2px 10px rgba(0,0,0,0.2)'}}>
             <MenuItem onClick={handleClose} style={{fontSize:"12px",borderBottom:"1px solid gray"}}>
             نسخ رابط المتجر
-            <FaCopy
+             <i
+               className="sicon-swap-stroke"
                 size={24}
                 style={{fontSize:"12px" ,width:"12px",height:"12px",marginLeft:"10px"}}
                 onClick={handleCopy}
-              />
+              ></i>
             </MenuItem>
             <MenuItem onClick={handleClose} style={{marginLeft:"10px"}}>
             واتساب
-            <FaWhatsapp size={20} style={{fontSize:"10px",marginLeft:"20px"}}/>
+            <i className="sicon-whatsapp" size={20} style={{fontSize:"10px",marginLeft:"20px"}}></i>
             </MenuItem>
           </div>
         </Popover>

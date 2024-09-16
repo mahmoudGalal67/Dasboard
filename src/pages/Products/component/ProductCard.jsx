@@ -202,6 +202,12 @@ const ProductCard = ({ imageUrl, price }) => {
     setQuantity((prevQuantity) => Math.max(prevQuantity + change, 1));
   };
 
+  const [isRed, setIsRed] = useState(false);
+
+  const handleColorClick = () => {
+    setIsRed(prev => !prev);
+  };
+
 
   return (
     <div className="product-card">
@@ -212,7 +218,10 @@ const ProductCard = ({ imageUrl, price }) => {
         </button>
         <div className="media-buttons">
           <div className="right">
-            <div className="icon-container">
+            <div className="icon-container"
+             style={{ backgroundColor: isRed ? 'red' : 'white' }}
+             onClick={handleColorClick }
+            >
               <FontAwesomeIcon icon={faThumbtack} />
             </div>
           </div>

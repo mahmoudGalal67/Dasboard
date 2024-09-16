@@ -170,7 +170,7 @@ const ProductHead = ({ showProductList, hideProductList }) => {
                 <p>الكتب الإلكترونية، الدورات، ملفات التحميل</p>
               </div>
               <div className="icon-container-drop">
-                <i className="sicon-game-controller-alt"></i>          
+                <i className="sicon-game-controller-alt"></i>
               </div>
             </div>
             <div className="dropdown-item">
@@ -252,7 +252,7 @@ const ProductHead = ({ showProductList, hideProductList }) => {
                 alignItems: "center",
               }}
             >
-              <h4>فرز المنتجات حسب</h4>
+              <h4> <i className="sicon-filter mx-2" style={{ fontSize: "15px" }}></i>فرز المنتجات حسب</h4>
               <div className="close-button-class">
                 <Button
                   variant="link"
@@ -396,7 +396,7 @@ const ProductHead = ({ showProductList, hideProductList }) => {
             }}
             onClick={handleShowExportModal}
           >
-            تصدير النتائج <span className="icon-export" />
+            <i className="sicon-file-download"></i> تصدير النتائج
           </Button>
         </Modal.Body>
       </Modal>
@@ -551,17 +551,17 @@ const ProductHead = ({ showProductList, hideProductList }) => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}>
             <div className="text-container-service">
-              <p>استيراد المنتجات</p>
+              <p> <i className="sicon-keyboard_arrow_left" style={{ position: "absolute", left: 2 }}></i>  استيراد المنتجات</p>
             </div>
             <div className="icon-container-drop">
               <i className="sicon-cloud-upload"></i>
             </div>
             {showImportDropdown && (
-              <div className="dropdown-content">
-                <p>استيراد المنتجات</p>
-                <p>استيراد كميات المنتجات</p>
-                <p>استيراد أسعار المنتجات</p>
-                <p>استيراد بيانات SEO</p>
+              <div className="dropdown-content p-2">
+                <p>استيراد المنتجات <i className="sicon-cloud-upload"></i></p>
+                <p>استيراد كميات المنتجات <i className="sicon-cloud-upload"></i></p>
+                <p>استيراد أسعار المنتجات <i className="sicon-cloud-upload"></i></p>
+                <p>استيراد بيانات SEO <i className="sicon-cloud-upload"></i></p>
               </div>
             )}
           </div>
@@ -569,18 +569,16 @@ const ProductHead = ({ showProductList, hideProductList }) => {
             onMouseEnter={handleMouseEnter2}
             onMouseLeave={handleMouseLeave2}>
             <div className="text-container-service">
-              <p>تصدير المنتجات</p>
+              <p> <i className="sicon-keyboard_arrow_left" style={{ position: "absolute", left: 2 }}></i> تصدير المنتجات</p>
             </div>
             <div className="icon-container-drop">
               <i className="sicon-cloud-download"></i>
             </div>
             {showExportDropdown && (
-              <div className="dropdown-export-content">
-                <p>اضافة قالب تصدير</p>
-                <p>تصدير المنتجات</p>
-                <p>تصدير كميات المنتجات</p>
-                <p>تصدير أسعار المنتجات</p>
-                <p>تصدير بيانات SEO</p>
+              <div className="dropdown-export-content p-2">
+                <p><i className="sicon-add" style={{ position: "absolute", left: 2 }}></i> اضافة قالب تصدير <i className="sicon-page"></i></p>
+                <hr />
+                <p> تصدير الطلبات</p>
               </div>
             )}
           </div>

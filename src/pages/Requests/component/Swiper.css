@@ -66,4 +66,12 @@
   .icons-item-class {
     color: inherit;
   }
-  
+  .status-circle{
+    border-radius: 50%;
+    height: 8px;
+    position: absolute;
+    right: -12px;
+    top: 7px;
+    width: 8px;
+    background-color:rgb(78, 75, 75);
+  }

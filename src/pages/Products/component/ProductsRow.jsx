@@ -241,6 +241,12 @@ const ProductsRow = ({ imageUrl }) => {
         setQuantity((prevQuantity) => Math.max(prevQuantity + change, 1));
     };
 
+    const [isRed, setIsRed] = useState(false);
+
+    const handleColorClick = () => {
+      setIsRed(prev => !prev);
+    };
+
     return (
         <ProductFormContainer style={{ marginBottom: "20px" }} className="RowHeadClass">
             <Row className="RowFlex">
@@ -250,7 +256,10 @@ const ProductsRow = ({ imageUrl }) => {
                             <ToggleCheckButton />
                         </button>
                     </div>
-                    <div className="icon-upload">
+                    <div className="icon-upload" 
+                     style={{ backgroundColor: isRed ? 'red' : 'white' }}
+                     onClick={handleColorClick}
+                    >
                         <FontAwesomeIcon icon={faThumbtack} />
                     </div>
                 </Col>
