@@ -65,7 +65,7 @@ const OrderSummary = ({ selectedIndex, showDetails }) => {
           </div>
           <div className="order-details">
             {showDetails && selectedOrder ? (
-              <p>لا توجد طلبات محددة</p>
+              <p style={{color:"black"}}>لا توجد طلبات محددة</p>
             ) : (
               <p>
                 <span> #128487450 </span>
@@ -80,7 +80,7 @@ const OrderSummary = ({ selectedIndex, showDetails }) => {
           null
         ) : <div className="order-item-left">
           <div className="order-item-left-1">
-            <p>SAR 0</p>
+            <p style={{color:"black"}}>SAR 0</p>
           </div>
           <div className="order-item-left-2">
             <p>منذ اليوم</p>

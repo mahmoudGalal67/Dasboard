@@ -29,6 +29,7 @@ import DesignServicesIcon from '@mui/icons-material/DesignServices';
 import BuildIcon from '@mui/icons-material/Build';
 import AppsIcon from '@mui/icons-material/Apps';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+// import NewOrder from '../pages/Requests/component/NewOrder'; 
 
 const appRoutes = [
   {
@@ -57,7 +58,13 @@ const appRoutes = [
     sidebarProps: {
       displayText: "الطلبات",
       icon: <i className="sicon-box"></i>
-    }
+    },
+    // children: [
+    //   {
+    //     path: "NewOrder",
+    //     element: <NewOrder />
+    //   }
+    // ]
   },
   {
     path: "/Clients",

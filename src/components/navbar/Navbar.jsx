@@ -40,7 +40,7 @@ const Navbar = () => {
         <div className="search-container">
           <input
             type="text"
-            className="search-input"
+            className="search-input-nav"
             placeholder="ابحث برقم الطلب، اسم العميل، رقم الشحنة"
           />
 
@@ -135,8 +135,8 @@ const Navbar = () => {
         </div>
 
         <Modal.Body className="text-center">
-          {copySuccess && <p className="copy-success">تم نسخ الكربون</p>}
-          <p className="navbar-inviteText">
+          {copySuccess && <p className="copy-success" style={{textAlign:"center",color:"green"}}>تم نسخ الكربون</p>}
+          <p className="navbar-inviteText" style={{margin:"auto auto",color:"#999" ,display:"flex",justifyContent:"center",fontSize:"16px"}}>
             اكسب نقاط عن كل دعوة لانشاء متجر جديد
           </p>
           <div

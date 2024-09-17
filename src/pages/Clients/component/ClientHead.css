@@ -1,0 +1,179 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.btn-services,
+.btn-filter,
+.btn-grid,
+.btn-list,
+.btn-add-product {
+  margin-right: 15px;
+  border: none !important;
+
+}
+
+.btn-services,
+.btn-filter,
+.btn-grid,
+.btn-list {
+  color: gray !important;
+  background-color: transparent !important;
+}
+
+
+.btn-add-product {
+  padding: 10px 30px !important;
+  border-radius: 50px !important;
+  color: blue !important;
+}
+
+.icon-plus {
+  font-size: 15px !important;
+  color: blue;
+}
+
+.icon-toolbox,.icon-filter,.icon-calender{
+  font-size: 20px !important;
+}
+.icon-calender{
+ margin: 0 5px;
+}
+
+.btn-add-product:hover {
+  background-color: #ffe0b5 !important;
+  border: none !important;
+}
+
+.spanIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 10px;
+  padding: 2px 5px;
+}
+
+.custom-datepicker {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.react-datepicker {
+  font-size: 16px;
+}
+
+.react-datepicker__header {
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ccc;
+}
+
+.react-datepicker__current-month {
+  font-weight: bold;
+}
+
+.react-datepicker__day--selected {
+  background-color: #007bff;
+  color: white;
+}
+
+.react-datepicker__day:hover {
+  background-color: #f0f0f0;
+}
+
+.left-aligned-service-client{
+  position: absolute !important;
+  left: 70px !important;
+  top: 370px !important;
+  padding: 5px !important;
+}
+
+.dropdown-item-service-client {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-end !important;
+  cursor: pointer;
+}
+
+.dropdown-item-service-client:hover {
+  background-color: #f1f1f1 !important;
+}
+
+.dropdown-item-service-client {
+  text-align: right;
+}
+
+.dropdown-item-service-client p {
+  margin: 0;
+  color: #6c757d;
+  text-align: right;
+}
+
+.dropdown-item-service-client{
+  position: relative;
+  cursor: pointer;
+}
+.search-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px; 
+  margin: 0 auto;    
+}
+
+.search-input {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  text-align: right;  
+  outline: none;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  padding: 10px;
+}
+
+.search-input::placeholder {
+  color: #bfbfbf;
+  padding-right: 30px; 
+}
+
+.search-input:focus {
+  border-color: #ccc;  
+}
+
+.search-icon {
+  position: absolute;
+  right: 50px; 
+  top: 42%;
+  transform: translateY(-50%);
+  color: #ccc;
+  font-size: 18px;
+  pointer-events: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -273,7 +273,7 @@ const ProductCard = ({ imageUrl, price }) => {
         </div>
         <div className="field">
           <div className="numberOfQuantity">
-            <p>كمية غير محدودة</p>
+            <p style={{color:"black"}}>كمية غير محدودة</p>
           </div>
           <div className="icon-1"><i className="sicon-bell-time"></i></div>
           <div className="icon-2" style={{position:"relative"}}>
@@ -284,7 +284,7 @@ const ProductCard = ({ imageUrl, price }) => {
           </div>
            
           <div className="quantityAndChoies" onClick={handleOptionsModalShow}>
-            <p style={{ fontSize: "15px" }}>الخيارات والكمية</p>
+            <p style={{ fontSize: "15px",color:"black"}}>الخيارات والكمية</p>
           </div>
         </div>
         <div className="field">
@@ -302,12 +302,12 @@ const ProductCard = ({ imageUrl, price }) => {
             className="classificationNameClass"
             onClick={handleCategoryModalShow}
           >
-            <p>تصنيف</p>
+            <p style={{color:"black"}}>تصنيف</p>
           </div>
         </div>
         <div className="field">
           <div className="DetailsClass" onClick={handleDetailsModalShow} style={{ cursor: 'pointer' }}>
-            <p><i className="sicon-tune-alt mx-2"></i>بيانات المنتج </p>
+            <p style={{color:"black"}}><i className="sicon-tune-alt mx-2"></i>بيانات المنتج </p>
           </div>
           <div className="selectDetailsClass">
             <select name="" placeholder="اختر تصنيف المنتج">

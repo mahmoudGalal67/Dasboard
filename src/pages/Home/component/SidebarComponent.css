@@ -24,6 +24,9 @@ h5 {
   margin-bottom:20px;
   
 }
+li p{
+  color:#161414 !important;
+}
 
 .notifications ul{
   height:300px;
