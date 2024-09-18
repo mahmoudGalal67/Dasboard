@@ -75,11 +75,11 @@ const Sidebar = () => {
       }}
     >
       <List disablePadding>
-        <Toolbar sx={{ marginBottom: "-5px" }}>
+        <Toolbar>
           <Stack sx={{ width: "75%" }} direction="row" justifyContent="center">
             <Avatar
               src={assets.images.logo}
-              sx={{ width:110, height:50 ,position:"absolute",right:0,top:0}}
+              sx={{ width:100, height:45,position:"absolute",right:0,top:0}}
             />
           </Stack>
         </Toolbar>

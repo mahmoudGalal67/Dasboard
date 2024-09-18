@@ -75,3 +75,11 @@
     width: 8px;
     background-color:rgb(78, 75, 75);
   }
+  @media (min-width: 1500px) {
+    .swiper-item {
+      width: 250px !important;
+      height:90px;
+    
+    }
+  
+  }

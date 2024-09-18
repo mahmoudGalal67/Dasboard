@@ -17,9 +17,6 @@
   margin: 0 !important; 
   justify-content: flex-start !important; 
   margin-top:140px !important;
-}
-
-.left-aligned-modal{
   width: auto !important;
 }
 .modal-small {
@@ -106,3 +103,14 @@
 }
 
 
+
+@media (min-width: 1500px) {
+  .left-aligned-modal {
+    margin: 0 !important; 
+    justify-content: flex-start !important; 
+    margin-top:140px !important;
+    width: auto !important;
+    height:70vh;
+  } 
+
+}

@@ -224,10 +224,10 @@ const ProductHead = ({ showProductList, hideProductList }) => {
           <i className="sicon-toolbox icon-services"></i> خدمات
         </Button>
         <Button className="btn-grid" onClick={showProductList}>
-          <FaTh className="icon" />
+          <FaTh className="icon" style={{color:"#999"}}/>
         </Button>
         <Button className="btn-list" onClick={hideProductList}>
-          <FaList className="icon" />
+          <FaList className="icon" style={{color:"#999"}}/>
         </Button>
       </div>
 

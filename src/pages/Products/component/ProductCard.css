@@ -1079,20 +1079,20 @@ select {
 
 @media (min-width: 1500px) {
   .product-card {
-    width: 300px;
+    width: 375px;
   }
-
 }
 
 @media (max-width: 1200px) {
   .product-card {
-    width: 380px;
+    width: 360px;
   }
 }
 
 @media (max-width: 1000px) {
   .product-card {
     width: 400px;
+    display:flex;
     justify-content: center !important;
   }
 }

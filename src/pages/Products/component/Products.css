@@ -1,14 +1,14 @@
 .product-flex {
   display: grid;
   grid-template-columns: repeat(3,1fr);
-  gap: 10px;
+  gap: 2px;
 }
 
 @media (min-width: 1800px) {
   .product-flex {
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    gap: 20px;
+    gap: 4px;
   }
 }
 

@@ -609,7 +609,7 @@ const ProductCard = ({ imageUrl, price }) => {
                     <Col>
                       <Form.Label className="mb-0">
                         {showTotal && (
-                          <p style={{ position: "absolute", left: "40px", top: "510px" }}>إجمالي الكمية 26</p>
+                          <p></p>
                         )}
                       </Form.Label>
                     </Col>
